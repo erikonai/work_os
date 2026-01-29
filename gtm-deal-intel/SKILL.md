@@ -24,6 +24,18 @@ On every invocation:
 5. **Check for project context:** If `data/gtm/project_context.json` exists, load business context.
 6. **Check for existing deal intel:** If `data/gtm/deal_intel_summary.json` exists, load it for cross-deal pattern analysis.
 7. **Check for CLAUDE.md:** If the project has a `CLAUDE.md` with a GTM/Business Context section, read it for additional context.
+8. **Check for HubSpot data:** If `data/gtm/hubspot/` directory exists with synced data, load it:
+   - `hubspot/deals.json` — CRM deals with stages, amounts, owners, and associated contacts
+   - `hubspot/contacts.json` — Contacts with company info, lifecycle stage, and owner
+   - `hubspot/engagements.json` — Notes, emails, and call logs linked to deals/contacts
+   - `hubspot/sync_metadata.json` — Last sync timestamp and counts
+
+   **When HubSpot data is available:**
+   - Cross-reference manually entered deals with CRM deals
+   - Use engagement history (emails, calls, notes) as additional context for deal analysis
+   - Map HubSpot deal stages to the skill's stage taxonomy
+   - Pull contact roles and titles for the people map
+   - If a user mentions a deal by company name, check HubSpot data first before asking for details
 
 ---
 
@@ -54,6 +66,11 @@ Accept deal information in any format. Parse and structure it.
 - CRM update (deal stage change, notes)
 - Freeform update ("Had a great call with Acme, their CFO is interested but worried about integration timeline")
 - Slack message or DM summary
+- **HubSpot deal reference:** If user says "analyze the Acme deal" or similar, check HubSpot data first:
+  - Load deal from `hubspot/deals.json` by company name match
+  - Pull associated contacts from `hubspot/contacts.json`
+  - Pull engagement history (notes, emails, calls) from `hubspot/engagements.json`
+  - Pre-populate the deal analysis with HubSpot data, then ask for additional context
 
 **Extract from the input:**
 - Company name, size, industry
@@ -229,8 +246,29 @@ All deal intel data lives in the project's `data/gtm/` directory (relative to th
         ├── deal_intel_summary.json     # <- This skill owns this file
         ├── deals/                      # <- This skill owns this directory
         │   └── [company_slug].json
+        ├── hubspot/                    # <- Synced from HubSpot via n8n workflow
+        │   ├── deals.json              # HubSpot deals with properties
+        │   ├── contacts.json           # HubSpot contacts
+        │   ├── engagements.json        # Notes, emails, calls
+        │   └── sync_metadata.json      # Last sync timestamp
         └── ...
 ```
+
+## HubSpot Stage Mapping
+
+When HubSpot data is available, map HubSpot deal stages to the skill's stage taxonomy:
+
+| HubSpot Stage | Skill Stage | Notes |
+|---------------|-------------|-------|
+| `appointmentscheduled` | `discovery` | Initial meeting scheduled |
+| `qualifiedtobuy` | `discovery` | Qualified but early |
+| `presentationscheduled` | `evaluation` | Demo or presentation scheduled |
+| `decisionmakerboughtin` | `evaluation` | Key stakeholder engaged |
+| `contractsent` | `negotiation` | Contract out for review |
+| `closedwon` | `closed_won` | Deal won |
+| `closedlost` | `closed_lost` | Deal lost |
+
+**Custom stages:** If the HubSpot pipeline has custom stages, infer the mapping from the stage name and position in the pipeline. When uncertain, ask the user to clarify the mapping.
 
 **On first run:** Create the `data/gtm/deals/` directory if it doesn't exist.
 
