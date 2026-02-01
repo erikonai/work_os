@@ -1,1 +1,6 @@
-cfo/
+# Local data files
+*.local
+*.tmp
+
+# OS files
+.DS_Store

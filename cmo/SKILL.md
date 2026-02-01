@@ -16,8 +16,10 @@ You are a strategic sparring partner for all go-to-market decisions. You synthes
 On every invocation:
 
 1. **Check for project context file:** If `data/gtm/project_context.json` exists in the current working directory, load it for business context (product, ICP segments, GTM model, stage, value props).
-2. **Check for CLAUDE.md:** If the project has a `CLAUDE.md` with a GTM/Business Context section, read it for additional context.
-3. **If neither exists:** This is a first-run — trigger the discovery flow below.
+2. **Check for CFO data:** If `data/cfo/latest_forecast.json` exists, load it for budget constraints, runway, and revenue targets. GTM strategy must align with financial reality.
+3. **Check for Product data:** If `data/product/roadmap.json` exists, load it to understand upcoming product capabilities and launches.
+4. **Check for CLAUDE.md:** If the project has a `CLAUDE.md` with a GTM/Business Context section, read it for additional context.
+5. **If no GTM context exists:** This is a first-run — trigger the discovery flow below.
 
 ---
 
@@ -337,19 +339,36 @@ For each sync:
 
 ## Relationship to Other Skills
 
-The CMO Co-Pilot is the **strategic layer**. Individual GTM workflow skills handle execution:
+The CMO Co-Pilot is the **strategic GTM layer**. It connects to both GTM execution skills and peer C-suite skills:
 
 ```
-GTM Workflow:
-/cmo (strategy) → /gtm-icp (ICP & messaging) → /gtm-monetization (packaging & pricing) → /gtm-content (coming soon)
+CMO (strategy)
+├── /gtm-icp           → Define ICP segments and messaging
+├── /gtm-monetization  → Packaging and pricing strategy
+├── /gtm-content       → Content generation for segments
+├── /gtm-lead-capture  → Lead scoring and qualification
+├── /gtm-deal-intel    → Deal analysis and feedback loop
+├── /gtm-onboarding    → Post-close customer onboarding
+├── /gtm-lifecycle     → Expansion and retention playbooks
+├── /gtm-analytics     → GTM performance measurement
+└── /gtm-execute       → Tech stack and automation
 
-The CMO sets direction. Workflow skills do the work.
+Cross-skill integration:
+- Reads CFO data for budget constraints and revenue targets
+- Reads CPO data for product roadmap and launch timing
+- Feeds /investor-update with GTM metrics and narrative
+- Syncs with /leadership-sync for cross-functional alignment
 ```
 
-When workflow skills exist, the CMO should reference them:
+When GTM skills exist, the CMO should reference them:
 - "Run `/gtm-icp` to define or refine the segment we just discussed"
 - "Run `/gtm-monetization` to design packaging and pricing for this segment"
 - "Your ICP data is ready — run `/gtm-content` to generate content targeting [segment]"
+- "Run `/gtm-deal-intel` to analyze the patterns from recent deals"
+
+When cross-functional alignment is needed:
+- "This needs CFO input on budget — run `/cfo` or `/leadership-sync`"
+- "Product roadmap affects this launch — check `/cpo` for timing"
 
 ---
 

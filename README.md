@@ -1,104 +1,280 @@
-# Custom Skills
+# AI Skills for Claude Code
 
-Created: 2026-01-24
+A modular skill system for running a startup with AI. Built for founder-led companies where one person + AI agents replaces traditional departments.
 
-## Available Skills
+---
+
+## Quick Reference
+
+| Category | Skills |
+|----------|--------|
+| **Leadership** | `/ceo` `/cfo` `/cmo` `/cpo` `/cto` `/leadership-sync` `/coach` |
+| **GTM** | `/gtm-icp` `/gtm-monetization` `/gtm-prospecting` `/gtm-outbound` `/gtm-content` `/gtm-lead-capture` `/gtm-deal-intel` `/gtm-onboarding` `/gtm-lifecycle` `/gtm-analytics` `/gtm-infra` |
+| **Finance** | `/finance-forecast` `/cap-table` `/board-deck` `/fundraise-prep` `/investor-update` |
+| **Engineering** | `/tech-debt` `/architecture-decision` `/infra-cost` |
+| **Design** | `/designer` |
+| **Dev Workflow** | `/pm` `/explore` `/create-plan` `/execute` `/review` `/peer-review` `/create-issue` `/document` |
+
+---
+
+## Architecture
+
+```
+┌─────────────────────────────────────────────────────────────────────────────────┐
+│                                   WORK OS                                        │
+├─────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                  │
+│    ┌──────────┐                    ┌───────────┐                                │
+│    │  /coach  │                    │   /ceo    │                                │
+│    │ (Mentor) │                    │ (Founder) │                                │
+│    └──────────┘                    └─────┬─────┘                                │
+│                                          │                                       │
+│                               ┌──────────┴──────────┐                           │
+│                               │  /leadership-sync   │                           │
+│                               │  (Cross-functional) │                           │
+│                               └──────────┬──────────┘                           │
+│                                          │                                       │
+│         ┌────────────────┬───────────────┼───────────────┬────────────────┐     │
+│         ▼                ▼               ▼               ▼                ▼     │
+│    ┌─────────┐     ┌─────────┐     ┌─────────┐     ┌─────────┐     ┌──────────┐│
+│    │  /cmo   │     │  /cfo   │     │  /cpo   │     │  /cto   │     │/designer ││
+│    │  (GTM)  │     │(Finance)│     │(Product)│     │ (Tech)  │     │ (Design) ││
+│    └────┬────┘     └────┬────┘     └────┬────┘     └────┬────┘     └──────────┘│
+│         │               │               │               │                       │
+│         ▼               ▼               ▼               ▼                       │
+│    ┌─────────┐     ┌─────────┐     ┌─────────┐     ┌─────────┐                  │
+│    │   GTM   │     │ Finance │     │   Dev   │     │  Tech   │                  │
+│    │ Skills  │     │ Skills  │     │Workflow │     │ Skills  │                  │
+│    │  (11)   │     │   (5)   │     │   (8)   │     │   (3)   │                  │
+│    └─────────┘     └─────────┘     └─────────┘     └─────────┘                  │
+│                                                                                  │
+└─────────────────────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## Leadership Skills
+
+Strategic decision-making at the executive level.
 
 | Skill | Purpose |
 |-------|---------|
-| `/pm` | Senior PM - produces CTO-ready PRDs with hypothesis-driven MVP scoping |
-| `/cto` | Technical architecture and implementation planning |
-| `/create-issue` | Quick issue capture mid-development |
-| `/explore` | Codebase exploration before implementation |
-| `/create-plan` | Structured plan document with progress tracking |
-| `/execute` | Implement plan with status updates |
-| `/review` | Comprehensive code review |
-| `/peer-review` | Evaluate external review findings |
-| `/document` | Update docs after code changes |
-| `/cmo` | CMO Co-Pilot - GTM strategy, growth frameworks, and marketing leadership (composite GTM leader voice) |
-| `/gtm-icp` | Define and refine ICP segments, messaging frameworks, positioning, and objection handling |
-| `/gtm-monetization` | Design packaging, pricing strategy, and value communication |
-| `/gtm-content` | Generate segment-targeted content (LinkedIn posts, emails, case studies, sales decks) from ICP and messaging data |
-| `/gtm-lead-capture` | Build lead qualification rubrics, response templates, enrichment workflows, and handoff protocols |
-| `/gtm-deal-intel` | Analyze deal conversations (transcripts, notes, emails), score opportunities, extract competitive intel, and feed insights back upstream |
-| `/gtm-onboarding` | Design onboarding playbooks, welcome sequences, milestone tracking, and time-to-value acceleration |
-| `/gtm-lifecycle` | Design expansion playbooks, churn prevention signals, renewal processes, and feature adoption campaigns |
-| `/gtm-analytics` | GTM performance reports, channel analysis, content attribution, and funnel diagnostics |
-| `/gtm-execute` | GTM tech stack selection, automation workflows, and execution infrastructure to operationalize the GTM strategy |
-| `/learning-opp` | Three-level concept explanations |
+| **`/ceo`** | Founder strategy, capital allocation, board management, stakeholder decisions |
+| **`/cfo`** | Strategic finance, valuation narrative, VC readiness, runway planning |
+| **`/cmo`** | GTM strategy, growth frameworks, marketing leadership, pipeline prioritization |
+| **`/cpo`** | Product strategy, roadmap prioritization, competitive positioning, PMF validation |
+| **`/cto`** | Technical leadership, architecture decisions, infrastructure, engineering health |
+| **`/leadership-sync`** | Cross-functional alignment, synthesizes all C-suite perspectives into unified output |
+| **`/coach`** | Stoic philosophy-based mentoring for resilience, perspective, and the hard days |
 
-## Typical Workflows
+---
 
-**Feature Development:**
-`/pm` → `/cto` → `/explore` → `/create-plan` → `/execute` → `/review` → `/document`
+## GTM Skills
 
-**Quick Bug/Feature Capture:**
-`/create-issue`
+Full go-to-market system from strategy to execution to retention.
 
-**Code Review:**
-`/review` → `/peer-review` (if getting external feedback)
+> **See [GTM-README.md](./GTM-README.md) for detailed GTM architecture and workflows.**
 
-**Learning:**
-`/learning-opp`
+### Strategy
 
-**GTM & Marketing (10-skill ecosystem):**
+| Skill | Purpose |
+|-------|---------|
+| **`/gtm-icp`** | Define ICP segments, messaging frameworks, value props, objection handling |
+| **`/gtm-monetization`** | Packaging, pricing strategy, value communication |
+
+### Execution
+
+| Skill | Purpose |
+|-------|---------|
+| **`/gtm-prospecting`** | Build enriched prospect lists — find targets, enrich, score, detect signals |
+| **`/gtm-outbound`** | Execute personalized sequences — email, LinkedIn, multi-touch campaigns |
+| **`/gtm-content`** | Generate segment-targeted content — LinkedIn posts, emails, case studies |
+| **`/gtm-lead-capture`** | Qualify and route leads — scoring rubrics, response templates, handoffs |
+| **`/gtm-deal-intel`** | Analyze deals — extract patterns from calls, score opportunities, feed upstream |
+
+### Post-Sale
+
+| Skill | Purpose |
+|-------|---------|
+| **`/gtm-onboarding`** | Activate customers — welcome sequences, milestone tracking, time-to-value |
+| **`/gtm-lifecycle`** | Retain and expand — churn prevention, renewal processes, expansion playbooks |
+
+### Infrastructure & Measurement
+
+| Skill | Purpose |
+|-------|---------|
+| **`/gtm-analytics`** | Measure performance — funnel diagnostics, channel attribution, reports |
+| **`/gtm-infra`** | Build the stack — tool selection, integrations, data flows |
+
+---
+
+## Finance Skills
+
+Financial planning, fundraising, and investor communication.
+
+| Skill | Purpose |
+|-------|---------|
+| **`/finance-forecast`** | Scenario modeling, revenue projections, burn rate analysis |
+| **`/cap-table`** | Equity tracking, dilution analysis, option pool modeling |
+| **`/board-deck`** | Quarterly board presentations with metrics, narrative, and asks |
+| **`/fundraise-prep`** | Data room preparation, VC Q&A prep, due diligence readiness |
+| **`/investor-update`** | Monthly investor updates for existing and potential investors |
+
+---
+
+## Engineering Skills
+
+Technical strategy, debt management, and infrastructure optimization.
+
+| Skill | Purpose |
+|-------|---------|
+| **`/tech-debt`** | Track, prioritize, and plan technical debt paydown |
+| **`/architecture-decision`** | Generate and review Architecture Decision Records (ADRs) |
+| **`/infra-cost`** | Analyze and optimize cloud infrastructure costs, identify waste |
+
+---
+
+## Design Skills
+
+UI/UX review and design system management.
+
+| Skill | Purpose |
+|-------|---------|
+| **`/designer`** | UI/UX design review, visual critique, design system architecture for React/shadcn/Tailwind |
+
+---
+
+## Development Workflow Skills
+
+Day-to-day development tasks and code quality.
+
+| Skill | Purpose |
+|-------|---------|
+| **`/pm`** | Senior PM — produces CTO-ready PRDs with hypothesis-driven MVP scoping |
+| **`/explore`** | Codebase exploration before implementation |
+| **`/create-plan`** | Structured implementation plan with progress tracking |
+| **`/execute`** | Implement plan with status updates |
+| **`/review`** | Comprehensive code review |
+| **`/peer-review`** | Evaluate external review findings |
+| **`/create-issue`** | Quick issue capture mid-development |
+| **`/document`** | Update documentation after code changes |
+| **`/learning-opp`** | Three-level concept explanations (beginner → intermediate → advanced) |
+
+---
+
+## Common Workflows
+
+### Strategic Planning
 ```
-/cmo (strategy) → /gtm-icp (ICP & messaging) → /gtm-monetization (packaging & pricing)
-    ↑                                              ↓
-    │                                         /gtm-content (content creation)
-    │                                              ↓
-    │                                         /gtm-execute (tech stack & automation)
-    │                                              ↓
-    │                                         /gtm-lead-capture (lead scoring & handoff)
-    │                                              ↓
-    │                                         /gtm-deal-intel (deal analysis)
-    │                                              ↓
-    │                                         /gtm-onboarding (post-close onboarding)
-    │                                              ↓
-    │                                         /gtm-lifecycle (expand & retain)
-    │                                              ↓
-    └──────────────────────────────────────── /gtm-analytics (cross-cutting measurement)
-                                                   ↩ feeds back to /cmo and all skills
+/leadership-sync → /cmo + /cfo + /cpo + /cto → unified strategy
 ```
 
-**Strategy flow:** `/cmo` → `/gtm-icp` → `/gtm-monetization` → `/gtm-content`
-**Execution layer:** `/gtm-execute` (tech stack, automation, and workflows to operationalize everything)
-**Pre-sale flow:** `/gtm-lead-capture` → `/gtm-deal-intel`
-**Post-sale flow:** `/gtm-onboarding` → `/gtm-lifecycle`
-**Measurement layer:** `/gtm-analytics` (reads from all skills, produces diagnostics and recommendations)
+### GTM Execution
+```
+/gtm-icp → /gtm-infra → /gtm-prospecting → /gtm-outbound → /gtm-lead-capture
+    → /gtm-deal-intel → /gtm-onboarding → /gtm-lifecycle
+    ← /gtm-analytics (feedback loop)
+```
 
-**Data dependencies:**
-- `/gtm-content` requires `messaging_framework.json` (from `/gtm-icp`)
-- `/gtm-lead-capture` requires `icp_profiles.json` (from `/gtm-icp`)
-- `/gtm-deal-intel` warns without `icp_profiles.json` but doesn't block
-- `/gtm-deal-intel` produces upstream recommendations for `/gtm-icp`, `/cmo`, and `/gtm-content`
-- `/gtm-onboarding` warns without `icp_profiles.json` but doesn't block; reads deal files for personalization
-- `/gtm-lifecycle` warns without `icp_profiles.json` but doesn't block; reads pricing for expansion paths
-- `/gtm-execute` reads all GTM data files to understand what needs execution infrastructure; no hard dependencies
-- `/gtm-analytics` has no hard dependencies — reads all `data/gtm/*.json` files and reports on whatever exists
-- `/gtm-lifecycle` feeds churn/expansion insights back to `/cmo`, `/gtm-icp`, and `/gtm-deal-intel`
+### Feature Development
+```
+/cpo → /pm → /cto → /explore → /create-plan → /execute → /review → /document
+```
 
-**Data ownership (`data/gtm/`):**
-| File | Owner |
-|------|-------|
-| `project_context.json` | `/cmo` |
-| `icp_profiles.json` | `/gtm-icp` |
-| `messaging_framework.json` | `/gtm-icp` |
-| `pricing_strategy.json` | `/gtm-monetization` |
-| `revenue_parameters.json` | `/gtm-monetization` |
-| `content_calendar.json` | `/gtm-content` |
-| `content/` | `/gtm-content` |
-| `lead_scoring.json` | `/gtm-lead-capture` |
-| `response_templates.json` | `/gtm-lead-capture` |
-| `deal_intel_summary.json` | `/gtm-deal-intel` |
-| `deals/` | `/gtm-deal-intel` |
-| `onboarding_playbooks.json` | `/gtm-onboarding` |
-| `welcome_sequences.json` | `/gtm-onboarding` |
-| `lifecycle_playbooks.json` | `/gtm-lifecycle` |
-| `expansion_signals.json` | `/gtm-lifecycle` |
-| `gtm_analytics.json` | `/gtm-analytics` |
-| `channel_analysis.json` | `/gtm-analytics` |
-| `gtm_execution_stack.json` | `/gtm-execute` |
-| `gtm_scorecard.json` | `/cmo` |
-| `sync_history.json` | `/cmo` |
-| `scorecards/` | `/cmo` |
+### Fundraising
+```
+/cfo → /finance-forecast → /cap-table → /fundraise-prep → /board-deck
+```
+
+### Investor Communication
+```
+/cfo + /cmo + /gtm-analytics → /investor-update or /board-deck
+```
+
+---
+
+## Data Structure
+
+Each skill reads from and writes to a project's `data/` directory:
+
+```
+project/
+└── data/
+    ├── ceo/                # CEO decisions, strategy, board
+    ├── coach/              # Reflections, practices
+    ├── gtm/                # All GTM skills share this
+    │   ├── project_context.json
+    │   ├── icp_profiles.json
+    │   ├── messaging_framework.json
+    │   ├── prospects/
+    │   ├── outbound/
+    │   ├── deals/
+    │   └── ...
+    ├── cfo/                # Finance skills
+    │   ├── latest_forecast.json
+    │   ├── cap_table.json
+    │   └── ...
+    ├── product/            # CPO, PM
+    ├── engineering/        # CTO, tech-debt, ADRs
+    ├── design/             # Designer
+    └── leadership/         # Leadership sync
+```
+
+---
+
+## Skill Count
+
+| Category | Count |
+|----------|-------|
+| Leadership | 7 |
+| GTM | 11 |
+| Finance | 5 |
+| Engineering | 3 |
+| Design | 1 |
+| Dev Workflow | 9 |
+| **Total** | **36** |
+
+---
+
+## Philosophy
+
+**One founder + AI agents > traditional departments**
+
+These skills embody principles from modern operators:
+- **Elena Verna** — Re-find PMF every 3 months. Free product > paid ads.
+- **Jeanne DeWitt Grosser** — 1 person + AI replaces 10 SDRs. 80% buy to avoid pain.
+- **Luke Harries** — Everything is a launch. Fix the prompt, not the output.
+- **Jason Lemkin** — $1M before first sales hire. AI agents doing the work.
+- **CJ Gustafson** — Metrics are a means, not an end. Tell the story.
+
+---
+
+## Contributing
+
+Each skill is a markdown file in its own directory:
+
+```
+skills/
+├── skill-name/
+│   └── SKILL.md
+└── ...
+```
+
+Skills follow a consistent structure:
+1. **Frontmatter** — name, description
+2. **Context Loading** — what data to read on invocation
+3. **Core Philosophy** — principles that guide behavior
+4. **Phases** — step-by-step workflow
+5. **Output & Persistence** — what to produce and where to save
+6. **JSON Schemas** — data structure definitions
+7. **Behaviors** — personality and pushback patterns
+
+---
+
+## License
+
+MIT
+
+---
+
+*Built for founders who'd rather build products than manage processes.*
