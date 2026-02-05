@@ -144,22 +144,22 @@ Generate pre-written forwarding emails using WithCoverage methodology.
 2. Subject line includes recipient's first name for personalization
 3. Opening acknowledges the relationship (how advisor knows recipient)
 4. One sentence on why this person specifically (not generic)
-5. One sentence TreasuryPath description (from messaging framework)
+5. One sentence company description (from messaging framework)
 6. Soft ask: "Happy to connect you two if you're open?"
 7. Sign-off as advisor
 
 **Email template:**
 
 ```
-Subject: [First Name] - intro to Jeff @ TreasuryPath
+Subject: [First Name] - intro to [Founder Name] @ [Company]
 
 [First Name],
 
-Hope you're well! I wanted to introduce you to Jeff Forkan, co-founder of TreasuryPath.
+Hope you're well! I wanted to introduce you to [Founder Name], co-founder of [Company].
 
-[1 sentence relevance hook based on company/role from ICP - e.g., "Given [Company]'s international expansion, I thought their platform for global treasury might be relevant."]
+[1 sentence relevance hook based on company/role from ICP - e.g., "Given [Target Company]'s international expansion, I thought their platform might be relevant."]
 
-[1 sentence TreasuryPath description - e.g., "They're building AI-native treasury management for Series A-C companies - cash visibility, FX hedging, and yield optimization in one platform."]
+[1 sentence company description from messaging framework]
 
 Happy to connect you two if you're open?
 
@@ -170,7 +170,7 @@ Best,
 **Follow-up template (after intro is made):**
 
 ```
-Subject: Re: [First Name] - intro to Jeff @ TreasuryPath
+Subject: Re: [First Name] - intro to [Founder Name] @ [Company]
 
 [First Name],
 
@@ -179,7 +179,7 @@ Great to e-meet you! [Advisor] mentioned you might be dealing with [pain hypothe
 Would love to share how we're helping companies like [relevant customer] with [specific use case]. Worth a quick call this week?
 
 Best,
-Jeff
+[Founder Name]
 ```
 
 **Output:** Save to `data/advisors/intro_requests/{advisor_slug}_requests.json`

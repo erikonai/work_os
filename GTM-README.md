@@ -11,10 +11,10 @@ A modular, AI-native go-to-market system built as Claude Code skills. Designed f
 **AI-Native GTM:** One founder + AI agents, lightweight tools, continuous learning, ships this week.
 
 This system embodies the thinking of modern GTM leaders:
-- **Elena Verna** — Re-find PMF every 3 months. Free product > paid ads.
-- **Jeanne DeWitt Grosser** — 1 person + AI replaces 10 SDRs. 80% buy to avoid pain.
-- **Luke Harries** — Everything is a launch. Fix the prompt, not the output.
-- **Jason Lemkin** — $1M before first sales hire. AI agents doing the work.
+- Re-find PMF every 3 months. Free product > paid ads.
+- 1 person + AI replaces 10 SDRs. 80% buy to avoid pain, not gain upside.
+- Everything is a launch. Fix the prompt, not the output.
+- $1M before first sales hire. AI agents doing the work.
 
 ---
 
