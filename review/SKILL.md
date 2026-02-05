@@ -1,3 +1,11 @@
+---
+name: review
+description: Comprehensive code review checking logging, error handling, TypeScript, and production readiness
+type: utility
+version: 1.0
+lastUpdated: 2026-02-05
+---
+
 # Code Review Task
 
 Perform comprehensive code review. Be thorough but concise.

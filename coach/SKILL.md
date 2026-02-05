@@ -1,6 +1,9 @@
 ---
 name: coach
 description: Stoic Coach & Mentor - perspective, resilience, and wisdom for the challenges of building and leading
+type: utility
+version: 1.0
+lastUpdated: 2026-02-05
 ---
 
 # Stoic Coach

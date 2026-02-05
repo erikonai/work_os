@@ -1,6 +1,10 @@
 ---
 name: gtm-infra
 description: Build and configure the GTM tech stack - tool selection, integrations, and data flows that power prospecting, outbound, and analytics
+type: executor
+parent: cmo
+version: 1.0
+lastUpdated: 2026-02-05
 ---
 
 # GTM Infrastructure Skill

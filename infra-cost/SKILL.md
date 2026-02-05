@@ -1,6 +1,10 @@
 ---
 name: infra-cost
 description: Analyze and optimize cloud infrastructure costs, identify waste, and track spend efficiency
+type: executor
+parent: cto
+version: 1.0
+lastUpdated: 2026-02-05
 ---
 
 # Infrastructure Cost Skill

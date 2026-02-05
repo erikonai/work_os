@@ -1,6 +1,10 @@
 ---
 name: gtm-outbound
 description: Execute personalized outreach sequences across channels - email, LinkedIn, multi-touch campaigns with AI-assisted messaging
+type: executor
+parent: cmo
+version: 1.0
+lastUpdated: 2026-02-05
 ---
 
 # GTM Outbound Skill

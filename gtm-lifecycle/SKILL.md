@@ -1,6 +1,10 @@
 ---
 name: gtm-lifecycle
 description: Design expansion playbooks, churn prevention signals, renewal processes, and feature adoption campaigns
+type: executor
+parent: cmo
+version: 1.0
+lastUpdated: 2026-02-05
 ---
 
 # GTM Lifecycle Skill

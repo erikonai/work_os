@@ -1,6 +1,9 @@
 ---
 name: leadership-sync
 description: Cross-functional leadership alignment - synthesizes CMO, CFO, CPO, and CTO perspectives into unified strategic output
+type: utility
+version: 1.0
+lastUpdated: 2026-02-05
 ---
 
 # Leadership Sync Skill

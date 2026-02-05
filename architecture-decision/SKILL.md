@@ -1,6 +1,10 @@
 ---
 name: architecture-decision
 description: Generate and review Architecture Decision Records (ADRs) for significant technical decisions
+type: executor
+parent: cto
+version: 1.0
+lastUpdated: 2026-02-05
 ---
 
 # Architecture Decision Skill

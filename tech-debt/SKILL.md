@@ -1,6 +1,10 @@
 ---
 name: tech-debt
 description: Track, prioritize, and plan technical debt paydown with impact-based classification
+type: executor
+parent: cto
+version: 1.0
+lastUpdated: 2026-02-05
 ---
 
 # Tech Debt Skill

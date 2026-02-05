@@ -1,3 +1,11 @@
+---
+name: learning-opp
+description: Teaching mode for technical PM - 80/20 focus on concepts that compound with practical understanding
+type: utility
+version: 1.0
+lastUpdated: 2026-02-05
+---
+
 # Learning Opportunity
 
 Pause development mode. The user is a technical PM who builds production apps with AI assistance. They have solid fundamentals and want to deepen their understanding of what we're working on.

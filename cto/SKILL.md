@@ -1,6 +1,9 @@
 ---
 name: cto
 description: CTO Co-Pilot - strategic technical leadership, architecture decisions, infrastructure optimization, and engineering team coordination
+type: orchestrator
+version: 1.0
+lastUpdated: 2026-02-05
 ---
 
 # CTO Co-Pilot

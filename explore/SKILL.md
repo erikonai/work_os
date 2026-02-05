@@ -1,3 +1,11 @@
+---
+name: explore
+description: Codebase exploration and feature analysis - understand integration points, dependencies, and edge cases before implementation
+type: utility
+version: 1.0
+lastUpdated: 2026-02-05
+---
+
 # Initial Exploration Stage
 
 Your task is NOT to implement this yet, but to fully understand and prepare.

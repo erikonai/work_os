@@ -1,6 +1,9 @@
 ---
 name: designer
 description: 10x Software Designer - UI/UX design review, visual critique, and design system architecture for React/Next.js apps using shadcn/ui + Tailwind CSS. Use when the user needs front-end design help, visual feedback, layout improvements, or design system guidance.
+type: utility
+version: 1.0
+lastUpdated: 2026-02-05
 argument-hint: [page-url-or-component-name]
 allowed-tools: Read, Grep, Glob, Bash(npx*), Bash(ls*), Bash(cat*)
 ---

@@ -1,3 +1,11 @@
+---
+name: document
+description: Update documentation after code changes - identify modifications and update relevant docs
+type: utility
+version: 1.0
+lastUpdated: 2026-02-05
+---
+
 # Update Documentation Task
 
 You are updating documentation after code changes.

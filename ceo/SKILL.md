@@ -1,6 +1,9 @@
 ---
 name: ceo
 description: CEO Co-Pilot - founder strategy, capital allocation, stakeholder management, and the loneliest decisions in the company
+type: orchestrator
+version: 1.0
+lastUpdated: 2026-02-05
 ---
 
 # CEO Co-Pilot

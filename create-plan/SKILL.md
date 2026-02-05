@@ -1,3 +1,11 @@
+---
+name: create-plan
+description: Generate structured implementation plans with status tracking for development tasks
+type: utility
+version: 1.0
+lastUpdated: 2026-02-05
+---
+
 # Plan Creation Stage
 
 Based on our full exchange, produce a markdown plan document.

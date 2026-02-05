@@ -1,6 +1,10 @@
 ---
 name: gtm-deal-intel
 description: Analyze deal conversations (transcripts, notes, emails), score opportunities, extract competitive intel, and feed insights back upstream
+type: executor
+parent: cmo
+version: 1.0
+lastUpdated: 2026-02-05
 ---
 
 # GTM Deal Intel Skill

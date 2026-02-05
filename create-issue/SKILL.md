@@ -1,3 +1,11 @@
+---
+name: create-issue
+description: Quickly capture bugs, features, or improvements as complete issues during development
+type: utility
+version: 1.0
+lastUpdated: 2026-02-05
+---
+
 # Create Issue
 
 User is mid-development and thought of a bug/feature/improvement. Capture it fast so they can keep working.

@@ -1,6 +1,10 @@
 ---
 name: advisor-outreach
 description: Systematically harvest warm intros from advisors - network scanning, ICP matching, intro request generation, and status tracking
+type: executor
+parent: cmo
+version: 1.0
+lastUpdated: 2026-02-05
 ---
 
 # Advisor Outreach Skill

@@ -1,6 +1,10 @@
 ---
 name: gtm-analytics
 description: GTM performance reports, channel analysis, content attribution, and funnel diagnostics
+type: executor
+parent: cmo
+version: 1.0
+lastUpdated: 2026-02-05
 ---
 
 # GTM Analytics Skill

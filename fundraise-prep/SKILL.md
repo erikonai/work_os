@@ -1,6 +1,10 @@
 ---
 name: fundraise-prep
 description: Data room preparation, VC Q&A prep, due diligence readiness, and fundraising materials
+type: executor
+parent: cfo
+version: 1.0
+lastUpdated: 2026-02-05
 ---
 
 # Fundraise Prep Skill

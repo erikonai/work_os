@@ -1,3 +1,11 @@
+---
+name: execute
+description: Execute implementation plan with elegant, modular code following existing patterns
+type: utility
+version: 1.0
+lastUpdated: 2026-02-05
+---
+
 # Execute Plan
 
 Now implement precisely as planned, in full.

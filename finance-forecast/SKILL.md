@@ -1,6 +1,10 @@
 ---
 name: finance-forecast
 description: Detailed financial scenario modeling, revenue projections, and burn rate analysis
+type: executor
+parent: cfo
+version: 1.0
+lastUpdated: 2026-02-05
 ---
 
 # Finance Forecast Skill

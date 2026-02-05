@@ -1,6 +1,10 @@
 ---
 name: cap-table
 description: Equity tracking, dilution analysis, option pool modeling, and cap table management
+type: executor
+parent: cfo
+version: 1.0
+lastUpdated: 2026-02-05
 ---
 
 # Cap Table Skill

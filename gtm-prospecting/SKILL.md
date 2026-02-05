@@ -1,6 +1,10 @@
 ---
 name: gtm-prospecting
 description: Build enriched prospect lists from ICP criteria - find targets, enrich contacts, score accounts, detect trigger signals
+type: executor
+parent: cmo
+version: 1.0
+lastUpdated: 2026-02-05
 ---
 
 # GTM Prospecting Skill

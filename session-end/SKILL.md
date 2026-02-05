@@ -1,6 +1,9 @@
 ---
 name: session-end
 description: End-of-session wrap-up - tech debt scan, work summary, and CLAUDE.md improvements
+type: utility
+version: 1.0
+lastUpdated: 2026-02-05
 ---
 
 # Session End

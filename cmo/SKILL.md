@@ -1,6 +1,9 @@
 ---
 name: cmo
 description: CMO Co-Pilot - GTM strategy, growth frameworks, and marketing leadership (composite GTM leader voice)
+type: orchestrator
+version: 1.0
+lastUpdated: 2026-02-05
 ---
 
 # CMO Co-Pilot
@@ -497,7 +500,8 @@ CMO (strategy)
 ├── /gtm-onboarding    → Post-close customer onboarding
 ├── /gtm-lifecycle     → Expansion and retention playbooks
 ├── /gtm-analytics     → GTM performance measurement
-└── /gtm-infra         → Tech stack and automation
+├── /gtm-infra         → Tech stack and automation
+└── /advisor-outreach  → Network-based intro harvesting from advisors
 
 Cross-skill integration:
 - Reads CFO data for budget constraints and revenue targets

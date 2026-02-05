@@ -1,6 +1,10 @@
 ---
 name: board-deck
 description: Generate quarterly board presentations with metrics, narrative, and strategic asks
+type: executor
+parent: cfo
+version: 1.0
+lastUpdated: 2026-02-05
 ---
 
 # Board Deck Skill

@@ -1,6 +1,10 @@
 ---
 name: gtm-content
 description: Generate segment-targeted content (LinkedIn posts, emails, case studies, sales decks) from ICP and messaging data
+type: executor
+parent: cmo
+version: 1.0
+lastUpdated: 2026-02-05
 ---
 
 # GTM Content Skill

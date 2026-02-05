@@ -1,6 +1,9 @@
 ---
 name: morning-standup
 description: Start-of-day briefing - leadership sync, task review, and priority setting
+type: utility
+version: 1.0
+lastUpdated: 2026-02-05
 ---
 
 # Morning Standup

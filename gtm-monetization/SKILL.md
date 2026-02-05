@@ -1,6 +1,10 @@
 ---
 name: gtm-monetization
 description: Design packaging, pricing strategy, and value communication. Bridges GTM (CMO) and Finance (CFO).
+type: executor
+parent: cmo
+version: 1.0
+lastUpdated: 2026-02-05
 ---
 
 # GTM Monetization Skill

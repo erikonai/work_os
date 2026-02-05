@@ -1,6 +1,9 @@
 ---
 name: cpo
 description: CPO Co-Pilot - product strategy, roadmap prioritization, competitive positioning, and product-market fit validation
+type: orchestrator
+version: 1.0
+lastUpdated: 2026-02-05
 ---
 
 # CPO Co-Pilot

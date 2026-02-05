@@ -1,6 +1,10 @@
 ---
 name: gtm-onboarding
 description: Design onboarding playbooks, welcome sequences, milestone tracking, and time-to-value acceleration
+type: executor
+parent: cmo
+version: 1.0
+lastUpdated: 2026-02-05
 ---
 
 # GTM Onboarding Skill

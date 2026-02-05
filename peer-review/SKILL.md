@@ -1,3 +1,11 @@
+---
+name: peer-review
+description: Critically evaluate peer review findings as team lead with full project context
+type: utility
+version: 1.0
+lastUpdated: 2026-02-05
+---
+
 # Peer Review Evaluation
 
 A different team lead within the company has reviewed the current code/implementation and provided findings. Important context:

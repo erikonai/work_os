@@ -1,6 +1,10 @@
 ---
 name: gtm-icp
 description: Define and refine ICP segments, messaging frameworks, positioning, and objection handling
+type: executor
+parent: cmo
+version: 1.0
+lastUpdated: 2026-02-05
 ---
 
 # GTM ICP & Messaging Skill

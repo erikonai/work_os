@@ -1,6 +1,10 @@
 ---
 name: gtm-lead-capture
 description: Build lead qualification rubrics, response templates, enrichment workflows, and handoff protocols
+type: executor
+parent: cmo
+version: 1.0
+lastUpdated: 2026-02-05
 ---
 
 # GTM Lead Capture Skill
