@@ -1,404 +1,362 @@
-# Work OS - AI Skills for Claude Code
+# Work OS
 
-A modular skill system for running a startup with AI. Built for founder-led companies where one person + AI agents replaces traditional departments.
+A comprehensive AI-powered operating system for running a company, built on Claude Code's skill system.
 
----
-
-## Quick Reference
-
-| Category | Skills |
-|----------|--------|
-| **Leadership** | `/ceo` `/cfo` `/cmo` `/cpo` `/cto` `/leadership-sync` `/coach` |
-| **GTM** | `/gtm-icp` `/gtm-monetization` `/gtm-prospecting` `/gtm-outbound` `/gtm-content` `/gtm-lead-capture` `/gtm-deal-intel` `/gtm-onboarding` `/gtm-lifecycle` `/gtm-analytics` `/gtm-infra` `/advisor-outreach` |
-| **Finance** | `/finance-forecast` `/cap-table` `/board-deck` `/fundraise-prep` `/investor-update` |
-| **Engineering** | `/tech-debt` `/architecture-decision` `/infra-cost` |
-| **Product** | `/product-discovery` `/pm` |
-| **Design** | `/designer` |
-| **Dev Workflow** | `/explore` `/create-plan` `/execute` `/review` `/peer-review` `/create-issue` `/document` `/learning-opp` |
-| **Utilities** | `/morning-standup` `/session-end` `/skills-audit` |
+**40 skills** organized hierarchically: CEO at the top, C-suite personas (CMO, CFO, CPO, CTO, CISO), execution skills under each function, and a Stoic Coach for personal advisory.
 
 ---
 
 ## Architecture
 
 ```
-                                    ┌─────────────┐
-                                    │    /ceo     │
-                                    │  (Founder)  │
-                                    └──────┬──────┘
-                                           │
-              ┌────────────────────────────┼────────────────────────────┐
-              │                            │                            │
-              │                   ┌────────┴────────┐                   │
-              │                   │ /leadership-sync│                   │
-              │                   │(Cross-functional)                   │
-              │                   └────────┬────────┘                   │
-              │                            │                            │
-    ┌─────────┴─────────┬─────────────────┬┴───────────────┬───────────┴─────────┐
-    │                   │                 │                │                     │
-    ▼                   ▼                 ▼                ▼                     ▼
-┌───────┐         ┌───────┐         ┌───────┐        ┌───────┐            ┌──────────┐
-│ /cmo  │         │ /cfo  │         │ /cpo  │        │ /cto  │            │/designer │
-│ (GTM) │         │(Fin)  │         │(Prod) │        │(Tech) │            │ (Design) │
-└───┬───┘         └───┬───┘         └───┬───┘        └───┬───┘            └──────────┘
-    │                 │                 │                │
-    ▼                 ▼                 ▼                ▼
-┌────────┐       ┌────────┐        ┌────────┐      ┌────────┐
-│  GTM   │       │Finance │        │Product │      │  Tech  │
-│Skills  │       │Skills  │        │Skills  │      │Skills  │
-│  (12)  │       │  (5)   │        │  (2)   │      │  (3)   │
-└────────┘       └────────┘        └────────┘      └────────┘
-
-
-Standalone:  /coach (Mentor)    /morning-standup    /session-end    /skills-audit
-
-┌────────────────────────────────────────────────────────────────────────────────────┐
-│                        CROSS-FUNCTIONAL UTILITIES                                  │
-│                                                                                    │
-│  /explore  /create-plan  /execute  /review  /peer-review  /create-issue            │
-│  /document  /learning-opp                                                          │
-│                                                                                    │
-│  These skills can be invoked by any function at any time.                          │
-└────────────────────────────────────────────────────────────────────────────────────┘
-```
-
-### Skills Hierarchy
-
-```
-CEO (founder strategy)
-│
-├── Leadership Sync (cross-functional coordinator)
-│   └── Reads from: CMO, CFO, CPO, CTO
-│
-├── CMO (GTM strategy) ─────────────────────────────────────────────────────┐
-│   ├── gtm-icp           Define ICP segments and messaging                 │
-│   ├── gtm-monetization  Packaging and pricing strategy                    │
-│   ├── gtm-content       Content generation for segments                   │
-│   ├── gtm-prospecting   Enriched prospect lists and signals               │
-│   ├── gtm-outbound      Outreach execution                                │
-│   ├── gtm-lead-capture  Lead scoring and qualification                    │
-│   ├── gtm-deal-intel    Deal analysis and feedback loop                   │
-│   ├── gtm-onboarding    Post-close customer activation                    │
-│   ├── gtm-lifecycle     Expansion and retention playbooks                 │
-│   ├── gtm-analytics     GTM performance measurement                       │
-│   ├── gtm-infra         Tech stack and automation                         │
-│   └── advisor-outreach  Network-based intro harvesting                    │
-│
-├── CFO (finance strategy) ─────────────────────────────────────────────────┐
-│   ├── finance-forecast  Scenario modeling and projections                 │
-│   ├── cap-table         Equity tracking and dilution analysis             │
-│   ├── board-deck        Quarterly board presentations                     │
-│   ├── fundraise-prep    Data room and VC readiness                        │
-│   └── investor-update   Monthly investor communications                   │
-│
-├── CPO (product strategy) ─────────────────────────────────────────────────┐
-│   ├── product-discovery Validate assumptions before PRD writing           │
-│   └── pm                PRD writing and feature specification             │
-│
-├── CTO (engineering strategy) ─────────────────────────────────────────────┐
-│   ├── tech-debt         Track and prioritize technical debt               │
-│   ├── architecture-decision  ADR generation and review                    │
-│   └── infra-cost        Cloud cost analysis and optimization              │
-│
-├── Designer (standalone) ──────────────────────────────────────────────────┐
-│   └── UI/UX review, visual critique, design system architecture           │
-│
-├── Coach (standalone) ─────────────────────────────────────────────────────┐
-│   └── Stoic mentorship for resilience and perspective                     │
-│
-└── Dev Workflow (utilities) ───────────────────────────────────────────────┐
-    ├── explore           Codebase exploration before implementation        │
-    ├── create-plan       Structured implementation planning                │
-    ├── execute           Plan execution with status updates                │
-    ├── review            Comprehensive code review                         │
-    ├── peer-review       Evaluate external review findings                 │
-    ├── create-issue      Quick issue capture mid-development               │
-    ├── document          Documentation updates after changes               │
-    └── learning-opp      Three-level concept explanations                  │
+┌──────────────────────────────────────────────────────────────────────────────────────────┐
+│                                        WORK OS                                            │
+├──────────────────────────────────────────────────────────────────────────────────────────┤
+│                                        /ceo                                               │
+│                              (Founder strategy & direction)                               │
+├──────────────────────────────────────────────────────────────────────────────────────────┤
+│                                   /leadership-sync                                        │
+│                          (Cross-functional alignment layer)                               │
+├────────────────┬──────────────┬──────────────┬──────────────────┬────────────────────────┤
+│      CMO       │     CFO      │     CPO      │       CTO        │         CISO            │
+│  (GTM Leader)  │(Finance Lead)│(Product Lead)│  (Tech Leader)   │   (Security Leader)     │
+├────────────────┼──────────────┼──────────────┼──────────────────┼────────────────────────┤
+│ /gtm-icp       │ /finance-    │ /pm          │ /eng-brief       │ /ciso-compliance        │
+│ /gtm-content   │   forecast   │              │ /tech-debt       │ /ciso-security          │
+│ /gtm-execute   │ /cap-table   │              │ /architecture-   │ /ciso-privacy           │
+│ /gtm-lead-     │ /board-deck  │              │   decision       │ /ciso-vendor-risk       │
+│   capture      │ /fundraise-  │              │ /infra-cost      │                         │
+│ /gtm-deal-     │   prep       │              │                  │                         │
+│   intel        │              │              │                  │                         │
+│ /gtm-onboarding│              │              │                  │                         │
+│ /gtm-lifecycle │              │              │                  │                         │
+│ /gtm-analytics │              │              │                  │                         │
+│ /gtm-          │              │              │                  │                         │
+│   monetization │              │              │                  │                         │
+└────────────────┴──────────────┴──────────────┴──────────────────┴────────────────────────┘
+        │                                                                     │
+   /designer                                                               /coach
+(Cross-functional)                                                 (Personal advisory -
+                                                                    Stoic philosophy)
 ```
 
 ---
 
-## Leadership Skills
+## Installation
 
-Strategic decision-making at the executive level.
+### Prerequisites
 
-| Skill | Purpose |
-|-------|---------|
-| **`/ceo`** | Founder strategy, capital allocation, board management, stakeholder decisions |
-| **`/cfo`** | Strategic finance, valuation narrative, VC readiness, runway planning |
-| **`/cmo`** | GTM strategy, growth frameworks, marketing leadership, pipeline prioritization |
-| **`/cpo`** | Product strategy, roadmap prioritization, competitive positioning, PMF validation |
-| **`/cto`** | Technical leadership, architecture decisions, infrastructure, engineering health |
-| **`/leadership-sync`** | Cross-functional alignment, synthesizes all C-suite perspectives into unified output |
-| **`/coach`** | Stoic philosophy-based mentoring for resilience, perspective, and the hard days |
+- [Claude Code CLI](https://claude.ai/download) installed and authenticated
+- macOS, Linux, or Windows with WSL
 
----
+### Quick Install
 
-## GTM Skills
+Clone this repo and copy the skills to your Claude config:
 
-Full go-to-market system from strategy to execution to retention.
+```bash
+# Clone the repo
+git clone https://github.com/YOUR_ORG/work-os.git
+cd work-os
 
-> **See [GTM-README.md](./GTM-README.md) for detailed GTM architecture and workflows.**
+# Copy all skill directories to your Claude skills directory
+# (Excludes README and other non-skill files)
+for dir in */; do
+  if [ -f "$dir/SKILL.md" ]; then
+    cp -r "$dir" ~/.claude/skills/
+  fi
+done
 
-### Strategy
-
-| Skill | Purpose |
-|-------|---------|
-| **`/gtm-icp`** | Define ICP segments, messaging frameworks, value props, objection handling |
-| **`/gtm-monetization`** | Packaging, pricing strategy, value communication |
-
-### Execution
-
-| Skill | Purpose |
-|-------|---------|
-| **`/gtm-prospecting`** | Build enriched prospect lists - find targets, enrich, score, detect signals |
-| **`/gtm-outbound`** | Execute personalized sequences - email, LinkedIn, multi-touch campaigns |
-| **`/gtm-content`** | Generate segment-targeted content - LinkedIn posts, emails, case studies |
-| **`/gtm-lead-capture`** | Qualify and route leads - scoring rubrics, response templates, handoffs |
-| **`/gtm-deal-intel`** | Analyze deals - extract patterns from calls, score opportunities, feed upstream |
-| **`/advisor-outreach`** | Harvest warm intros from advisors - network scanning, ICP matching, intro requests |
-
-### Post-Sale
-
-| Skill | Purpose |
-|-------|---------|
-| **`/gtm-onboarding`** | Activate customers - welcome sequences, milestone tracking, time-to-value |
-| **`/gtm-lifecycle`** | Retain and expand - churn prevention, renewal processes, expansion playbooks |
-
-### Infrastructure & Measurement
-
-| Skill | Purpose |
-|-------|---------|
-| **`/gtm-analytics`** | Measure performance - funnel diagnostics, channel attribution, reports |
-| **`/gtm-infra`** | Build the stack - tool selection, integrations, data flows |
-
----
-
-## Finance Skills
-
-Financial planning, fundraising, and investor communication.
-
-| Skill | Purpose |
-|-------|---------|
-| **`/finance-forecast`** | Scenario modeling, revenue projections, burn rate analysis |
-| **`/cap-table`** | Equity tracking, dilution analysis, option pool modeling |
-| **`/board-deck`** | Quarterly board presentations with metrics, narrative, and asks |
-| **`/fundraise-prep`** | Data room preparation, VC Q&A prep, due diligence readiness |
-| **`/investor-update`** | Monthly investor updates for existing and potential investors |
-
----
-
-## Engineering Skills
-
-Technical strategy, debt management, and infrastructure optimization.
-
-| Skill | Purpose |
-|-------|---------|
-| **`/tech-debt`** | Track, prioritize, and plan technical debt paydown |
-| **`/architecture-decision`** | Generate and review Architecture Decision Records (ADRs) |
-| **`/infra-cost`** | Analyze and optimize cloud infrastructure costs, identify waste |
-
----
-
-## Product Skills
-
-Product discovery, management, and specification.
-
-| Skill | Purpose |
-|-------|---------|
-| **`/product-discovery`** | Validate assumptions through market research, competitive analysis, build vs buy decisions, and technical feasibility before PRD writing |
-| **`/pm`** | Senior PM - produces CTO-ready PRDs with hypothesis-driven MVP scoping |
-
----
-
-## Design Skills
-
-UI/UX review and design system management.
-
-| Skill | Purpose |
-|-------|---------|
-| **`/designer`** | UI/UX design review, visual critique, design system architecture for React/shadcn/Tailwind |
-
----
-
-## Development Workflow Skills
-
-Day-to-day development tasks and code quality.
-
-| Skill | Purpose |
-|-------|---------|
-| **`/explore`** | Codebase exploration before implementation |
-| **`/create-plan`** | Structured implementation plan with progress tracking |
-| **`/execute`** | Implement plan with status updates |
-| **`/review`** | Comprehensive code review |
-| **`/peer-review`** | Evaluate external review findings |
-| **`/create-issue`** | Quick issue capture mid-development |
-| **`/document`** | Update documentation after code changes |
-| **`/learning-opp`** | Three-level concept explanations (beginner to advanced) |
-
----
-
-## Utility Skills
-
-Standalone tools for productivity and maintenance.
-
-| Skill | Purpose |
-|-------|---------|
-| **`/morning-standup`** | Start-of-day briefing - leadership sync, task review, priority setting |
-| **`/session-end`** | End-of-session wrap-up - tech debt scan, work summary |
-| **`/skills-audit`** | Meta-skill for auditing and maintaining the skills ecosystem |
-
----
-
-## Common Workflows
-
-### Strategic Planning
+# Restart Claude Code for changes to take effect
 ```
-/ceo → /cmo + /cfo + /cpo + /cto (parallel) → /leadership-sync (synthesize)
-```
-*Leadership-sync reads from C-suite outputs, doesn't initiate them.*
 
-### GTM Execution
+### Verify Installation
+
+After restarting Claude Code, run:
+
+```bash
+/ceo
 ```
-/cmo → /gtm-icp → /gtm-monetization → /gtm-infra
-    → /gtm-prospecting → /gtm-content → /gtm-outbound → /advisor-outreach
-    → /gtm-lead-capture → /gtm-deal-intel
-    → /gtm-onboarding → /gtm-lifecycle
-    ← /gtm-analytics (feedback loop to all stages)
+
+You should see the CEO persona respond with a discovery prompt or strategic assessment.
+
+---
+
+## Quick Start
+
+### Your First Session
+
+1. **Start with the CEO** to set company context:
+   ```
+   /ceo
+   ```
+   This will run discovery and save your company strategy.
+
+2. **Run a leadership sync** to see cross-functional health:
+   ```
+   /leadership-sync
+   ```
+
+3. **Dive into specific functions** as needed:
+   ```
+   /cmo    # GTM strategy
+   /cfo    # Financial planning
+   /cpo    # Product strategy
+   /cto    # Technical decisions
+   /ciso   # Security & compliance
+   ```
+
+4. **When struggling**, use the coach:
+   ```
+   /coach
+   ```
+
+---
+
+## Skill Reference
+
+### Executive & Advisory Layer
+
+| Skill | Description | When to Use |
+|-------|-------------|-------------|
+| `/ceo` | Founder strategy, capital allocation, board management | Big decisions, setting direction, hard conversations |
+| `/coach` | Stoic philosophy-based coaching | When you're struggling, need perspective, or feel stuck |
+
+### C-Suite Personas
+
+| Skill | Description | Sub-Skills |
+|-------|-------------|------------|
+| `/cmo` | GTM strategy, growth frameworks, marketing leadership | 9 GTM skills |
+| `/cfo` | Strategic finance, valuation narrative, VC readiness | 4 Finance skills |
+| `/cpo` | Product strategy, roadmap prioritization, PMF validation | — |
+| `/cto` | Technical leadership, architecture decisions | 4 Engineering skills |
+| `/ciso` | Pragmatic startup security, compliance readiness, risk management | 4 Security skills |
+| `/leadership-sync` | Cross-functional alignment, synthesizes all perspectives | — |
+| `/designer` | UI/UX design review, design system architecture | — |
+
+### GTM Skills (under CMO)
+
+| Skill | Description |
+|-------|-------------|
+| `/gtm-icp` | ICP segments, messaging frameworks, positioning, objection handling |
+| `/gtm-monetization` | Packaging, pricing strategy, value communication |
+| `/gtm-content` | Segment-targeted content (LinkedIn, emails, case studies, decks) |
+| `/gtm-lead-capture` | Lead qualification, response templates, handoff protocols |
+| `/gtm-deal-intel` | Deal conversation analysis, opportunity scoring, competitive intel |
+| `/gtm-onboarding` | Onboarding playbooks, welcome sequences, time-to-value |
+| `/gtm-lifecycle` | Expansion playbooks, churn prevention, renewal processes |
+| `/gtm-analytics` | GTM performance reports, channel analysis, funnel diagnostics |
+| `/gtm-execute` | GTM tech stack selection, automation workflows |
+
+### Finance Skills (under CFO)
+
+| Skill | Description |
+|-------|-------------|
+| `/finance-forecast` | Detailed scenario modeling, revenue projections, burn analysis |
+| `/cap-table` | Equity tracking, dilution analysis, option pool modeling |
+| `/board-deck` | Quarterly board presentations with metrics and narrative |
+| `/fundraise-prep` | Data room preparation, VC Q&A prep, due diligence readiness |
+
+### Engineering Skills (under CTO)
+
+| Skill | Description |
+|-------|-------------|
+| `/eng-brief` | Weekly Engineering Brief — CTO-level status with strategic analysis and executive summary |
+| `/tech-debt` | Technical debt tracking, prioritization, paydown planning |
+| `/architecture-decision` | Architecture Decision Records (ADRs) generation and review |
+| `/infra-cost` | Cloud infrastructure cost analysis and optimization |
+
+### Security Skills (under CISO)
+
+| Skill | Description |
+|-------|-------------|
+| `/ciso-compliance` | SOC 2 policies, Vanta integration, evidence collection, audit readiness, gap analysis |
+| `/ciso-security` | Access control reviews, vulnerability management, incident response, security tool configuration |
+| `/ciso-privacy` | Privacy policies, DPAs, GDPR/CCPA compliance, data inventory, privacy impact assessments |
+| `/ciso-vendor-risk` | Vendor security assessments, SaaS tool reviews, risk scoring, onboarding checklists |
+
+### Development Workflow Skills
+
+| Skill | Description |
+|-------|-------------|
+| `/pm` | Senior PM - produces CTO-ready PRDs with hypothesis-driven scoping |
+| `/explore` | Codebase exploration before implementation |
+| `/create-plan` | Structured plan document with progress tracking |
+| `/execute` | Implement plan with status updates |
+| `/review` | Comprehensive code review |
+| `/peer-review` | Evaluate external review findings |
+| `/create-issue` | Quick issue capture mid-development |
+| `/document` | Update docs after code changes |
+
+### Other Skills
+
+| Skill | Description |
+|-------|-------------|
+| `/investor-update` | Generate monthly investor updates (existing + potential investor versions) |
+| `/learning-opp` | Three-level concept explanations |
+
+---
+
+## Typical Workflows
+
+### Weekly Leadership Sync
+```
+/leadership-sync        # Cross-functional health check
+/ceo                    # CEO-level decisions needed this week
+```
+
+### Weekly Engineering Review
+```
+/eng-brief              # Generate CTO-level engineering brief
+/cto                    # Address items flagged in the brief
+/tech-debt              # Review any debt surfaced during the week
+```
+
+### GTM Planning & Execution
+```
+/cmo                    # Set GTM strategy
+/gtm-icp                # Define/refine ICP and messaging
+/gtm-monetization       # Design pricing and packaging
+/gtm-content            # Generate content for segments
+/gtm-execute            # Build automation workflows
+```
+
+### Analyzing a Deal
+```
+/gtm-deal-intel         # Paste transcript, get scoring and intel
+```
+
+### Fundraising Prep
+```
+/cfo                    # Strategic financial view
+/finance-forecast       # Build detailed projections
+/cap-table              # Model dilution scenarios
+/fundraise-prep         # Prepare data room and Q&A
+```
+
+### Board Meeting Prep
+```
+/board-deck             # Generate board presentation
 ```
 
 ### Feature Development
 ```
-/cpo → /product-discovery → /pm → /cto → /designer
-    → /explore → /create-plan → /execute → /review → /document
-```
-*Product-discovery validates assumptions before PM writes PRD. Designer reviews before coding.*
-
-### Fundraising
-```
-/cfo → /finance-forecast → /cap-table → /fundraise-prep
+/cpo                    # Product strategy context
+/pm                     # Write PRD
+/cto                    # Technical feasibility
+/create-plan            # Implementation plan
+/execute                # Build it
+/review                 # Code review
 ```
 
-### Investor Communication
+### Security & Compliance
 ```
-/cfo + /cmo + /gtm-analytics → /investor-update
-/cfo + /cmo → /board-deck
-```
-
-### Bug Fixing
-```
-/explore → /create-plan → /execute → /review
+/ciso                   # Security strategy and posture review
+/ciso-compliance        # SOC 2 policies, evidence, audit readiness
+/ciso-security          # Access reviews, vulnerability management
+/ciso-privacy           # Privacy policies, DPAs, data inventory
+/ciso-vendor-risk       # Vendor security assessments
 ```
 
-### Tech Debt Paydown
+### When You're Struggling
 ```
-/cto → /tech-debt → /architecture-decision → /create-plan → /execute → /review
+/coach                  # Stoic perspective on challenges
 ```
 
 ---
 
-## Data Structure
+## Data Persistence
 
-Each skill reads from and writes to a project's `data/` directory:
+Each skill family writes to a dedicated data directory in your project:
 
 ```
-project/
+your-project/
 └── data/
-    ├── ceo/                # CEO decisions, strategy, board
-    ├── coach/              # Reflections, practices
-    ├── gtm/                # All GTM skills share this
-    │   ├── project_context.json
-    │   ├── icp_profiles.json
-    │   ├── messaging_framework.json
-    │   ├── prospects/
-    │   ├── outbound/
-    │   ├── deals/
-    │   └── ...
-    ├── cfo/                # Finance skills
-    │   ├── latest_forecast.json
-    │   ├── cap_table.json
-    │   └── ...
-    ├── investor-update/    # Investor communications
-    │   ├── config.json
-    │   └── history.json
-    ├── product/            # CPO, PM
-    ├── engineering/        # CTO, tech-debt, ADRs
-    ├── design/             # Designer
-    └── leadership/         # Leadership sync
+    ├── ceo/            # CEO strategy and decisions
+    ├── coach/          # Personal reflections
+    ├── gtm/            # CMO & GTM skills data
+    ├── cfo/            # CFO & Finance skills data
+    ├── product/        # CPO & Product skills data
+    ├── engineering/    # CTO & Engineering skills data
+    ├── ciso/           # CISO & Security skills data
+    ├── design/         # Designer skill data
+    └── leadership/     # Leadership sync data
 ```
 
----
-
-## Skill Count
-
-| Category | Count | Type |
-|----------|-------|------|
-| Leadership | 7 | 5 orchestrators + 2 utilities |
-| GTM | 12 | executors (parent: CMO) |
-| Finance | 5 | executors (parent: CFO) |
-| Engineering | 3 | executors (parent: CTO) |
-| Product | 2 | executors (parent: CPO) |
-| Design | 1 | utility |
-| Dev Workflow | 8 | cross-functional utilities |
-| Utilities | 3 | standalone |
-| **Total** | **41** | |
+Skills read from and write to JSON files, creating a persistent knowledge base that accumulates over time. Run skills in your project directory to build up context.
 
 ---
 
-## Philosophy
+## Customization
 
-**One founder + AI agents > traditional departments**
+### Modifying a Skill
 
-These skills embody principles from modern operators:
-- Re-find PMF every 3 months. Free product > paid ads.
-- 1 person + AI replaces 10 SDRs. 80% buy to avoid pain, not gain upside.
-- Everything is a launch. Fix the prompt, not the output.
-- $1M before first sales hire. AI agents doing the work.
-- Metrics are a means, not an end. Tell the story.
+Each skill is defined in a `SKILL.md` file. Edit `~/.claude/skills/[skill-name]/SKILL.md` to:
+- Change the persona voice
+- Add or remove frameworks
+- Adjust output formats
+- Modify data schemas
 
+### Creating a New Skill
+
+1. Create a directory: `~/.claude/skills/your-skill/`
+2. Add a `SKILL.md` file with frontmatter:
+
+```markdown
+---
+name: your-skill
+description: What this skill does
 ---
 
-## Skill Structure
+# Your Skill Name
 
-Each skill follows a consistent structure:
+**Role:** You are...
 
-```
-skills/
-├── skill-name/
-│   └── SKILL.md
-└── ...
+[Rest of skill definition]
 ```
 
-**Required frontmatter:**
-```yaml
----
-name: skill-name
-description: One-line description
-type: orchestrator | executor | utility
-parent: parent-skill (if executor)
-version: 1.0
-lastUpdated: YYYY-MM-DD
----
-```
+3. Restart Claude Code
 
-**Standard sections:**
-1. Context Loading - what data to read on invocation
-2. Core Capabilities - main workflows and frameworks
-3. Output Requirements - what to produce and where to save
-4. File Structure - data directory layout
-5. JSON Schemas - data structure definitions
-6. Relationship to Other Skills - how it connects to the hierarchy
-7. Key Principles - behavioral guidelines
+---
 
-Run `/skills-audit` to check ecosystem health and validate skill structure.
+## Persona Credits
+
+Each C-suite skill channels specific thought leaders:
+
+| Skill | Voices |
+|-------|--------|
+| **CEO** | Ben Horowitz, Tobi Lütke, Patrick Collison, Claire Hughes Johnson |
+| **CMO** | Elena Verna, Jeanne DeWitt Grosser, Luke Harries, Jason Lemkin |
+| **CFO** | CJ Gustafson (Mostly Metrics) |
+| **CPO** | Shreyas Doshi, Lenny Rachitsky, Marty Cagan, Gibson Biddle |
+| **CTO** | Werner Vogels, Kelsey Hightower, Will Larson, Charity Majors |
+| **CISO** | Pragmatic startup CISO composite (Caleb Sima mindset) |
+| **Coach** | Marcus Aurelius, Seneca, Epictetus, Ryan Holiday |
+
+---
+
+## Skill Count Summary
+
+| Category | Count |
+|----------|-------|
+| Executive & Advisory | 2 (CEO, Coach) |
+| C-Suite Personas | 5 (CMO, CFO, CPO, CTO, CISO) |
+| Cross-functional | 2 (leadership-sync, designer) |
+| GTM Skills | 9 |
+| Finance Skills | 4 |
+| Engineering Skills | 4 |
+| Security Skills | 4 |
+| Development Skills | 8 |
+| Other | 2 |
+| **Total** | **40** |
 
 ---
 
 ## License
 
-MIT
+Private - internal use only.
 
 ---
 
-*Built for founders who'd rather build products than manage processes.*
+## Built With
+
+[Claude Code](https://claude.ai/claude-code) by Anthropic
