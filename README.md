@@ -2,7 +2,7 @@
 
 A comprehensive AI-powered operating system for running a company, built on Claude Code's skill system.
 
-**40 skills** organized hierarchically: CEO at the top, C-suite personas (CMO, CFO, CPO, CTO, CISO), execution skills under each function, and a Stoic Coach for personal advisory.
+**41 skills** organized hierarchically: CEO at the top, C-suite personas (CMO, CFO, CPO, CTO, CISO), execution skills under each function, and a Stoic Coach for personal advisory.
 
 ---
 
@@ -23,11 +23,11 @@ A comprehensive AI-powered operating system for running a company, built on Clau
 ├────────────────┼──────────────┼──────────────┼──────────────────┼────────────────────────┤
 │ /gtm-icp       │ /finance-    │ /pm          │ /eng-brief       │ /ciso-compliance        │
 │ /gtm-content   │   forecast   │              │ /tech-debt       │ /ciso-security          │
-│ /gtm-execute   │ /cap-table   │              │ /architecture-   │ /ciso-privacy           │
-│ /gtm-lead-     │ /board-deck  │              │   decision       │ /ciso-vendor-risk       │
-│   capture      │ /fundraise-  │              │ /infra-cost      │                         │
-│ /gtm-deal-     │   prep       │              │                  │                         │
-│   intel        │              │              │                  │                         │
+│ /gtm-execute   │ /opex-model  │              │ /architecture-   │ /ciso-privacy           │
+│ /gtm-lead-     │ /cap-table   │              │   decision       │ /ciso-vendor-risk       │
+│   capture      │ /board-deck  │              │ /infra-cost      │                         │
+│ /gtm-deal-     │ /fundraise-  │              │                  │                         │
+│   intel        │   prep       │              │                  │                         │
 │ /gtm-onboarding│              │              │                  │                         │
 │ /gtm-lifecycle │              │              │                  │                         │
 │ /gtm-analytics │              │              │                  │                         │
@@ -126,7 +126,7 @@ You should see the CEO persona respond with a discovery prompt or strategic asse
 | Skill | Description | Sub-Skills |
 |-------|-------------|------------|
 | `/cmo` | GTM strategy, growth frameworks, marketing leadership | 9 GTM skills |
-| `/cfo` | Strategic finance, valuation narrative, VC readiness | 4 Finance skills |
+| `/cfo` | Strategic finance, valuation narrative, VC readiness | 5 Finance skills |
 | `/cpo` | Product strategy, roadmap prioritization, PMF validation | — |
 | `/cto` | Technical leadership, architecture decisions | 4 Engineering skills |
 | `/ciso` | Pragmatic startup security, compliance readiness, risk management | 4 Security skills |
@@ -152,6 +152,7 @@ You should see the CEO persona respond with a discovery prompt or strategic asse
 | Skill | Description |
 |-------|-------------|
 | `/finance-forecast` | Detailed scenario modeling, revenue projections, burn analysis |
+| `/opex-model` | OpEx vendor mapping — Campfire GL + Ramp AP data, vendor classification for Drivetrain forecasting |
 | `/cap-table` | Equity tracking, dilution analysis, option pool modeling |
 | `/board-deck` | Quarterly board presentations with metrics and narrative |
 | `/fundraise-prep` | Data room preparation, VC Q&A prep, due diligence readiness |
@@ -342,12 +343,12 @@ Each C-suite skill channels specific thought leaders:
 | C-Suite Personas | 5 (CMO, CFO, CPO, CTO, CISO) |
 | Cross-functional | 2 (leadership-sync, designer) |
 | GTM Skills | 9 |
-| Finance Skills | 4 |
+| Finance Skills | 5 |
 | Engineering Skills | 4 |
 | Security Skills | 4 |
 | Development Skills | 8 |
 | Other | 2 |
-| **Total** | **40** |
+| **Total** | **41** |
 
 ---
 
