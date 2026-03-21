@@ -152,7 +152,6 @@ You should see the CEO persona respond with a discovery prompt or strategic asse
 | Skill | Description |
 |-------|-------------|
 | `/finance-forecast` | Detailed scenario modeling, revenue projections, burn analysis |
-| `/opex-model` | OpEx vendor mapping — Campfire GL + Ramp AP data, vendor classification for Drivetrain forecasting |
 | `/cap-table` | Equity tracking, dilution analysis, option pool modeling |
 | `/board-deck` | Quarterly board presentations with metrics and narrative |
 | `/fundraise-prep` | Data room preparation, VC Q&A prep, due diligence readiness |
