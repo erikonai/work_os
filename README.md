@@ -26,7 +26,7 @@ A comprehensive AI-powered operating system for running a company, built on Clau
 │ /gtm-execute   │ /cap-table   │              │ /architecture-   │ /ciso-privacy           │
 │ /gtm-lead-     │ /board-deck  │              │   decision       │ /ciso-vendor-risk       │
 │   capture      │ /fundraise-  │              │ /infra-cost      │                         │
-│ /gtm-deal-     │  prep        │              │                  │                         │
+│ /gtm-deal-     │   prep       │              │                  │                         │
 │   intel        │              │              │                  │                         │
 │ /gtm-onboarding│              │              │                  │                         │
 │ /gtm-lifecycle │              │              │                  │                         │
