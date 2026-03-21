@@ -1,7 +1,6 @@
 "use client";
 
-import { SKILL_REGISTRY, LEADER_REGISTRY, DUPLICATE_GROUPS } from "@/lib/personas";
-import type { PersonaId } from "@/types";
+import { SKILL_REGISTRY, LEADER_REGISTRY } from "@/lib/personas";
 
 export default function StatsBar() {
   const totalSkills = SKILL_REGISTRY.length;
@@ -9,7 +8,6 @@ export default function StatsBar() {
   const communitySkills = SKILL_REGISTRY.filter((s) => s.source === "community").length;
   const totalLeaders = Object.values(LEADER_REGISTRY).flat().length;
   const personas = Object.keys(LEADER_REGISTRY).filter((p) => p !== "general").length;
-  const duplicates = DUPLICATE_GROUPS.reduce((sum, g) => sum + g.duplicates.length, 0);
 
   const stats = [
     { label: "TOTAL SKILLS", value: totalSkills, color: "#FFB000" },
@@ -17,11 +15,10 @@ export default function StatsBar() {
     { label: "COMMUNITY", value: communitySkills, color: "#00BFFF" },
     { label: "PERSONAS", value: personas, color: "#00FF88" },
     { label: "LEADERS", value: totalLeaders, color: "#B388FF" },
-    { label: "DUPLICATES", value: duplicates, color: "#FF4444" },
   ];
 
   return (
-    <div className="boot-up boot-delay-1 grid grid-cols-6 gap-3">
+    <div className="boot-up boot-delay-1 grid grid-cols-5 gap-3">
       {stats.map((stat) => (
         <div
           key={stat.label}

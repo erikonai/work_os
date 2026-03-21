@@ -5,7 +5,7 @@ import Header from "@/components/Header";
 import PersonaCard from "@/components/PersonaCard";
 import PersonaDetail from "@/components/PersonaDetail";
 import TerminalFeed from "@/components/TerminalFeed";
-import DuplicateAudit from "@/components/DuplicateAudit";
+
 import StatsBar from "@/components/StatsBar";
 import { getAllPersonas } from "@/lib/personas";
 import type { Persona, PersonaId } from "@/types";
@@ -25,7 +25,7 @@ export default function Dashboard() {
       "Initializing kernel modules...",
       `Loading ${personas.reduce((s, p) => s + p.skills.length, 0)} skills across ${personas.length} personas...`,
       "Connecting to intelligence feeds...",
-      "Running deduplication audit...",
+      "Validating persona mappings...",
       "All systems nominal. Ready.",
     ];
 
@@ -130,9 +130,6 @@ export default function Dashboard() {
             <TerminalFeed />
           </div>
         </div>
-
-        {/* Deduplication Audit */}
-        <DuplicateAudit />
 
         {/* Footer */}
         <footer className="border-t border-terminal-border pt-4 pb-8 flex items-center justify-between">

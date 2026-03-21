@@ -1,6 +1,18 @@
 # Local data files
 *.local
 *.tmp
+.env
+.env.local
 
 # OS files
 .DS_Store
+
+# Node
+node_modules/
+.next/
+*.tsbuildinfo
+
+# Cache and generated files
+**/data/cache/
+community-skills/**/package-lock.json
+.claude/
