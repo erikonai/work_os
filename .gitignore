@@ -15,4 +15,5 @@ node_modules/
 # Cache and generated files
 **/data/cache/
 community-skills/**/package-lock.json
-.claude/
+.claude/*
+!.claude/skills/
