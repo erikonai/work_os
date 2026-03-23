@@ -17,6 +17,7 @@ A curated collection of Claude Code skills organized by executive persona for ru
 
 - [What is WorkOS?](#what-is-workos)
 - [Skills](#skills)
+  - [Company Onboarding](#company-onboarding)
   - [CEO — Executive & Strategy](#ceo--executive--strategy)
   - [CRO — Revenue & Sales](#cro--revenue--sales)
   - [CMO — Marketing & GTM](#cmo--marketing--gtm)
@@ -44,6 +45,10 @@ Each skill is a `SKILL.md` file that teaches Claude how to perform a specific ta
 ---
 
 ## Skills
+
+### Company Onboarding
+
+- [company-onboarding](./company-onboarding/) - Central company intake and profile builder — interactive onboarding, progressive enrichment, and unified context for all C-Suite skills. Run this first to build your company profile across 8 domains (identity, leadership, product, GTM, financial, engineering, security, strategy), then all C-Suite skills automatically have the context they need.
 
 ### CEO — Executive & Strategy
 
@@ -226,6 +231,7 @@ cp -r community-skills/* ~/.claude/skills/
 ### Quick Start
 
 ```
+/company-onboarding     # Build your company profile (run first)
 /ceo                    # Set company context and strategy
 /leadership-sync        # Cross-functional health check
 /cmo                    # GTM strategy
