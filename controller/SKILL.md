@@ -78,7 +78,7 @@ First controller sync. Let's map your accounting operations before we build anyt
 - Billing/invoicing: [Stripe Billing, custom, manual?]
 
 **Close Process:**
-- Current close timeline: [How many days after month-end?]
+- Current close timeline: 5 business days after month-end
 - Who does the close today? [Names/roles]
 - Documented close checklist: [Yes/No — if yes, where?]
 - Known pain points: [What takes the longest? What breaks?]
@@ -226,9 +226,9 @@ Every reconciliation workpaper must include:
 |-----------|----------|-----------|
 | **Daily (during close)** | Close task progress, JE posting, reconciliation completion | `/controller close` |
 | **Weekly (Fridays)** | Management flash report — revenue, cash, AR/AP, burn | `/controller report weekly` |
-| **Monthly (days 1-10)** | Full month-end close cycle | `/controller close` |
-| **Monthly (days 5-10)** | All reconciliations completed | `/controller reconcile` |
-| **Monthly (days 10-15)** | Executive financial update with full KPIs | `/controller report monthly` |
+| **Monthly (days 1-5)** | Full month-end close cycle | `/controller close` |
+| **Monthly (days 1-4)** | All reconciliations completed | `/controller reconcile` |
+| **Monthly (days 5-7)** | Executive financial update with full KPIs | `/controller report monthly` |
 | **Monthly** | Transaction scan for anomalies and misclassifications | `/controller scan` |
 | **Monthly** | Accrual review — post new, reverse prior, validate | `/controller accruals` |
 | **Quarterly** | Audit prep — workpapers, support, guidance queries | `/controller audit` |
@@ -266,7 +266,7 @@ Write to: `data/controller/controller_scorecard.json`
     "period": "YYYY-MM",
     "status": "open|in_progress|closed",
     "day_of_close": 0,
-    "target_close_day": 10,
+    "target_close_day": 5,
     "tasks_total": 0,
     "tasks_completed": 0,
     "pct_complete": 0
@@ -881,7 +881,7 @@ On every invocation:
 
 The default close checklist, customizable per company:
 
-### Day 1-2: Pre-Close
+### Day 1: Pre-Close & Cutoff
 
 | # | Task | Owner | Dependencies | Status |
 |---|------|-------|-------------|--------|
@@ -892,35 +892,35 @@ The default close checklist, customizable per company:
 | 5 | Import PayPal transactions through period end | Controller | PayPal access | |
 | 6 | Import Ramp transactions through period end | Controller | Ramp access | |
 | 7 | Review and approve pending expense reports | Approvers | Employee submissions | |
+| 8 | Reverse prior month accruals | Controller | None | |
 
-### Day 3-5: Core Close
+### Day 2-3: Reconciliations & Core Close
 
 | # | Task | Owner | Dependencies | Status |
 |---|------|-------|-------------|--------|
-| 8 | Reconcile bank accounts | Controller | #3 | |
-| 9 | Reconcile Stripe to GL | Controller | #4 | |
-| 10 | Reconcile PayPal to GL | Controller | #5 | |
-| 11 | Reconcile AR subledger to GL | Controller | #1 | |
-| 12 | Reconcile AP subledger to GL | Controller | #2 | |
-| 13 | Review and post accruals | Controller | #2 complete | |
-| 14 | Review and reverse prior month accruals | Controller | #13 | |
-| 15 | Run transaction scan for anomalies | Controller | #3-7 | |
-| 16 | Post reclassification journal entries | Controller | #15 | |
-| 17 | Reconcile payroll to GL | Controller | Payroll processed | |
+| 9 | Reconcile bank accounts | Controller | #3 | |
+| 10 | Reconcile Stripe to GL | Controller | #4 | |
+| 11 | Reconcile PayPal to GL | Controller | #5 | |
+| 12 | Reconcile AR subledger to GL | Controller | #1 | |
+| 13 | Reconcile AP subledger to GL | Controller | #2 | |
+| 14 | Reconcile payroll to GL | Controller | Payroll processed | |
+| 15 | Reconcile prepaids and amortization | Controller | None | |
+| 16 | Reconcile deferred revenue | Controller | #1 | |
+| 17 | Reconcile fixed assets and depreciation | Controller | None | |
 | 18 | Review intercompany transactions (if applicable) | Controller | All entities closed | |
+| 19 | Run transaction scan for anomalies | Controller | #3-7 | |
 
-### Day 5-7: Review & Adjustments
+### Day 4: Adjustments & Analysis
 
 | # | Task | Owner | Dependencies | Status |
 |---|------|-------|-------------|--------|
-| 19 | Reconcile prepaids and amortization | Controller | None | |
-| 20 | Reconcile deferred revenue | Controller | #1 | |
-| 21 | Reconcile fixed assets and depreciation | Controller | None | |
-| 22 | Post adjusting journal entries | Controller | #8-21 | |
+| 20 | Post reclassification journal entries | Controller | #19 | |
+| 21 | Review and post accruals | Controller | #13 complete | |
+| 22 | Post adjusting journal entries | Controller | #9-18 | |
 | 23 | Flux analysis — review P&L line items vs. prior month and budget | Controller | #22 | |
 | 24 | Investigate and explain material variances | Controller | #23 | |
 
-### Day 7-10: Reporting & Sign-Off
+### Day 5: Reporting & Sign-Off
 
 | # | Task | Owner | Dependencies | Status |
 |---|------|-------|-------------|--------|
@@ -942,17 +942,17 @@ The default close checklist, customizable per company:
 ### Progress
 ██████████░░░░░░░░░░ 52% (16/31 tasks)
 
-**Day of close:** Day 4 of 10
+**Day of close:** Day 3 of 5
 **Target close date:** [Date]
 **Status:** On Track / Behind / Blocked
 
 ### By Phase
 | Phase | Tasks | Done | Blocked | Status |
 |-------|-------|------|---------|--------|
-| Pre-Close (Day 1-2) | 7 | 7 | 0 | Complete |
-| Core Close (Day 3-5) | 11 | 6 | 1 | In Progress |
-| Review (Day 5-7) | 6 | 2 | 0 | Not Started |
-| Reporting (Day 7-10) | 7 | 0 | 0 | Not Started |
+| Pre-Close & Cutoff (Day 1) | 8 | 8 | 0 | Complete |
+| Reconciliations & Core (Day 2-3) | 11 | 6 | 1 | In Progress |
+| Adjustments & Analysis (Day 4) | 5 | 0 | 0 | Not Started |
+| Reporting & Sign-Off (Day 5) | 7 | 0 | 0 | Not Started |
 
 ### Blocked Items
 | Task | Blocked By | Owner | Action Needed |
@@ -967,11 +967,11 @@ The default close checklist, customizable per company:
 ### Close Quality (Prior Month)
 | Dimension | Score | Notes |
 |-----------|-------|-------|
-| Timeliness | 4/5 | Closed day 9 (target: 10) |
+| Timeliness | 4/5 | Closed day 5 (target: 5) |
 | Accuracy | 3/5 | 2 post-close adjustments |
 | Completeness | 4/5 | All recons complete |
 | Documentation | 3/5 | Some workpapers need support |
-| Communication | 4/5 | Reports delivered day 12 |
+| Communication | 4/5 | Reports delivered day 6 |
 ```
 
 ---
@@ -1024,11 +1024,11 @@ Track close dates and set expectations:
 
 ```json
 {
-  "target_close_day": 10,
-  "reporting_day": 15,
-  "board_reporting_day": 20,
+  "target_close_day": 5,
+  "reporting_day": 7,
+  "board_reporting_day": 15,
   "close_calendar": {
-    "2026-01": {"close_date": "2026-02-09", "status": "closed", "quality_score": 3.6},
+    "2026-01": {"close_date": "2026-02-05", "status": "closed", "quality_score": 3.6},
     "2026-02": {"close_date": null, "status": "in_progress", "quality_score": null}
   }
 }
@@ -1343,7 +1343,7 @@ A concise weekly report focused on core operational metrics. Designed for the ex
 
 The comprehensive monthly report — the kind shown in the screenshot. This is the primary financial communication to the leadership team.
 
-**Cadence:** Monthly, after close (target day 12-15)
+**Cadence:** Monthly, after close (target day 5-7)
 **Audience:** Exec team, board (potentially), investors (selectively)
 **Delivery:** Notion page + Slack summary + optional branded PDF via `/april-brand`
 

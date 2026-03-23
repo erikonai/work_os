@@ -5,8 +5,8 @@ A curated collection of Claude Code skills organized by executive persona for ru
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Skills-93+-FFB000?style=flat-square" alt="Skills" />
-  <img src="https://img.shields.io/badge/Personas-8-00FF88?style=flat-square" alt="Personas" />
+  <img src="https://img.shields.io/badge/Skills-100+-FFB000?style=flat-square" alt="Skills" />
+  <img src="https://img.shields.io/badge/Personas-9-00FF88?style=flat-square" alt="Personas" />
   <img src="https://img.shields.io/badge/Leaders_Tracked-35-B388FF?style=flat-square" alt="Leaders" />
   <img src="https://img.shields.io/badge/Claude_Code-Compatible-5A67D8?style=flat-square" alt="Claude Code" />
 </p>
@@ -21,6 +21,7 @@ A curated collection of Claude Code skills organized by executive persona for ru
   - [CRO — Revenue & Sales](#cro--revenue--sales)
   - [CMO — Marketing & GTM](#cmo--marketing--gtm)
   - [CFO — Finance & Operations](#cfo--finance--operations)
+  - [Controller — Accounting & Close](#controller--accounting--close)
   - [CTO — Engineering & Architecture](#cto--engineering--architecture)
   - [CPO — Product & Discovery](#cpo--product--discovery)
   - [CISO — Security & Compliance](#ciso--security--compliance)
@@ -90,6 +91,16 @@ Each skill is a `SKILL.md` file that teaches Claude how to perform a specific ta
 - [infra-cost](./infra-cost/) - Analyze and optimize cloud infrastructure costs, identify waste, and track spend efficiency.
 - [financial-analyst](./community-skills/finance-skills/financial-analyst/) - Ratio analysis, DCF valuation, budget variance, and rolling forecasts with Python automation tools. *Community*
 - [saas-metrics-coach](./community-skills/finance-skills/saas-metrics-coach/) - ARR, MRR, churn, CAC, LTV, NRR, Quick Ratio analysis and 12-month projections. *Community*
+
+### Controller — Accounting & Close
+
+- [controller](./controller/) - Controller Co-Pilot — operational accounting, month-end close (5-day target), reconciliations, transaction quality, accruals, financial reporting, and audit readiness.
+  - `controller close` — Month-end close manager with task tracking, dependencies, and progress against 5-day target.
+  - `controller reconcile` — Subledger-to-balance-sheet reconciliations (AR, AP, bank, Stripe, PayPal) with audit-ready workpapers.
+  - `controller scan` — Transaction anomaly detection: duplicates, misclassifications, missing support, vendor/department/tag mismatches.
+  - `controller accruals` — Estimated accruals from historical patterns, reversal tracking, double-count prevention, JE validation.
+  - `controller report` — Weekly management flash (Fridays) and monthly executive updates with KPIs, MoM/YoY, and gross margin by product.
+  - `controller audit` — Big 4 accounting guidance (ASC/IFRS), workpaper preparation, SOX readiness, and audit support.
 
 ### CTO — Engineering & Architecture
 
