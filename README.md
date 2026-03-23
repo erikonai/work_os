@@ -31,7 +31,6 @@ A curated collection of Claude Code skills organized by executive persona for ru
   - [Community — Business & Marketing](#community--business--marketing)
   - [Community — Communication & Writing](#community--communication--writing)
   - [Community — Collaboration & Project Management](#community--collaboration--project-management)
-- [WorkOS Dashboard](#workos-dashboard)
 - [Getting Started](#getting-started)
 - [Creating Skills](#creating-skills)
 
@@ -188,24 +187,6 @@ Each skill is a `SKILL.md` file that teaches Claude how to perform a specific ta
 - [file-organizer](./community-skills/file-organizer/) - Intelligently organizes files and folders by understanding context, finding duplicates, and suggesting better organizational structures.
 - [invoice-organizer](./community-skills/invoice-organizer/) - Automatically organizes invoices and receipts for tax preparation by reading files, extracting information, and renaming consistently.
 - [tailored-resume-generator](./community-skills/tailored-resume-generator/) - Analyzes job descriptions and generates tailored resumes that highlight relevant experience, skills, and achievements.
-
----
-
-## WorkOS Dashboard
-
-The **WorkOS Dashboard** is a retro-terminal command center for visualizing the entire skill ecosystem.
-
-Built with **Next.js**, **Tailwind CSS**, and **Supabase** — featuring a neon amber (#FFB000) aesthetic with scanline overlays, glassmorphism cards, and a boot sequence animation.
-
-```bash
-cd workos-dashboard && npm install && npm run dev
-```
-
-**Features:**
-- 8 executive persona cards with skill counts and leader tracking
-- Real-time intel feed aggregating thought leadership from 35 industry leaders
-- Web scraper with SHA-256 content deduplication
-- All API keys via environment variables (see `.env.example`)
 
 ---
 
