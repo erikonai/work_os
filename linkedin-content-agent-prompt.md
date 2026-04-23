@@ -23,14 +23,25 @@ First, check: is there an existing conversation worth joining? A trending post, 
 
 If no conversation is worth joining, use a specific detail from your research as a jumping-off point for an original post. If nothing compelling surfaces at all, fall back to Erik's direct experience.
 
-STEP 3: REVIEW PAST CONTENT FOR REPETITION
+STEP 3: REVIEW PAST CONTENT
 
-Use the Notion fetch tool to read the full LinkedIn Content page (ID: 32f992e46de080a087d2eeadb2cd49b9). Read ALL callouts under both "Drafts" and "Posted" sections. Extract:
+Use the Notion fetch tool to read the full LinkedIn Content page (ID: 32f992e46de080a087d2eeadb2cd49b9). Read ALL callouts under both "Drafts" and "Posted" sections.
+
+First, study the Posted section carefully. These are Erik's published posts. They represent his actual voice. Pay attention to:
+- How he opens posts (sentence rhythm, word choice, level of directness)
+- How he transitions between ideas (short sentences, line breaks, callbacks)
+- His humor style (where he places jokes, how self-deprecating vs. dry)
+- The ratio of story to insight to opinion
+- How specific he gets with numbers, tool names, and timelines
+- What his best lines sound like. The new draft should sound like it came from the same person.
+
+Then, extract from both Drafts and Posted:
 - Hooks used (don't repeat similar hooks)
 - Themes covered (don't rehash the same angle)
 - Specific examples or stories told (don't retell them)
 - Tools mentioned (vary the emphasis)
 - CTA questions asked (don't reuse)
+- Post lengths (pick a different length than the most recent posts)
 
 Actively avoid repeating the same opening structure, anecdote, metaphor, CTA question, or framing pattern.
 
