@@ -39,6 +39,14 @@ GENERAL = {
             "Team Building, Comp & Leveling",
             "AI & Finance Automation",
         ]},
+        {"title": "By the Numbers", "items": [
+            ("31 → 5 days", "month-end close"),
+            ("2 consecutive", "clean KPMG audits"),
+            ("$250M+", "raised across Series B and C"),
+            ("+25% valuation", "and 6–8 months of runway"),
+            ("$100M → $1B", "revenue scale-up at MightyHive"),
+            ("−72% AR days", "at Harvard Eye Associates"),
+        ]},
         {"title": "Finance Stack", "items": [
             ("Close & GL", "Campfire, NetSuite, Sage Intacct, Numeric, QuickBooks"),
             ("FP&A", "Runway, Drivetrain, Planful, Anaplan, Pigment"),
@@ -52,10 +60,6 @@ GENERAL = {
         {"title": "Education", "items": [
             ("B.S. Business Strategy & Public Health", ""),
             "Brigham Young University, 2014",
-        ]},
-        {"title": "Languages", "items": [
-            "English (native) · Spanish (native)",
-            "Portuguese (intermediate) · ASL (proficient)",
         ]},
     ],
     "experience": [
