@@ -72,7 +72,7 @@ GENERAL = {
              (None, "Implemented ten core platforms (Campfire, Ramp, Runway, Drivetrain, Anrok, Growfin, Guideline, QuotaPath, Thoropass, and Safebase), rebuilding ASC 606 billing and revenue recognition, AP and procurement controls, automated multi-jurisdiction sales tax, collections, commissions, and trust infrastructure."),
              (None, "Built FP&A as an operating system: three-statement model, ARR waterfall and snowball, sales-capacity and headcount models, unit economics, and driver-based scenarios fed by HubSpot, Campfire, and GCP; the board's primary forecasting reference and the basis for april's $40M Series B and Series C readiness."),
              (None, "Built the people infrastructure behind a scaling finance org: compensation and equity philosophy, career ladders and leveling guides, performance review framework, workforce planning SOP, and commission plans."),
-             (None, "Built a growing library of AI agents on top of the finance stack, including Invoice Butler, an AI-driven AR collections engine, and a Compliance Agent Ecosystem automating security and vendor-risk questionnaires."),
+             (None, "Built a growing library of AI agents on top of the finance stack, including Invoice Butler, an AI-driven AR collections engine that cut AR aging from 126 days to 43, and a Compliance Agent Ecosystem that answers security and vendor-risk questionnaires at a 95% completion rate on questionnaires running to 1,000 questions."),
          ]},
         {"title": "VP of Finance & Operations", "company": "Kisi", "dates": "02/2024 – 12/2024 · New York, NY",
          "bullets": [
@@ -116,7 +116,8 @@ ABACUM = {
         {"name": "Invoice Butler", "tag": "AI-driven AR collections engine",
          "desc": (
              "Designed and deployed a ten-stage collections system that moves overdue accounts without manual "
-             "chasing: tiered automated email dunning in two customer voices, a Slack-bot gate that posts account "
+             "chasing, cutting AR aging from 126 days to 43: tiered automated email dunning in two customer voices, "
+             "a Slack-bot gate that posts account "
              "dossiers and hands ownership to Customer Success, an automatic Growth escalation ladder applying "
              "staged commercial pressure, and a hard auto-escalation backstop. I built the tag-driven workflow "
              "architecture, the escalation and guardrail logic, the Slack integration, and every email template."
@@ -127,8 +128,8 @@ ABACUM = {
              "questionnaire responses: an autofill agent drafting against a governed 320-row answer bank, an "
              "evidence-conversion agent turning SOC and penetration-test PDFs into queryable knowledge pages, a "
              "knowledge-base health monitor, and an append-only control agent that refuses to close a run with "
-             "unresolved approval gates. Runs on scheduled crons behind human review gates; a 152-item "
-             "enterprise questionnaire now comes back as a reviewed draft."
+             "unresolved approval gates. Runs on scheduled crons behind human review gates, hitting a 95% "
+             "completion rate on questionnaires running to 1,000 questions."
          )},
     ],
     "sidebar": [
