@@ -45,7 +45,7 @@ GENERAL = {
             ("$250M+", "raised across Series B and C"),
             ("+25% valuation", "and 6–8 months of runway"),
             ("$100M → $1B", "revenue scale-up at MightyHive"),
-            ("−72% AR days", "at Harvard Eye Associates"),
+            ("126 → 43 days", "AR aging at april"),
         ]},
         {"title": "Finance Stack", "items": [
             ("Close & GL", "Campfire, NetSuite, Sage Intacct, Numeric, QuickBooks"),
