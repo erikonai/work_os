@@ -13,10 +13,6 @@ CONTACT = [
     "New York, NY",
 ]
 
-IB_URL = "https://app.notion.com/p/36c992e46de080b6a1f1f2d6733de314"
-CA_URL = "https://app.notion.com/p/39d992e46de0809e9e1af3c5c2aa58b3"
-
-
 # ============================================================ GENERAL (finance)
 
 GENERAL = {
@@ -113,7 +109,7 @@ ABACUM = {
         "operating depth is what tells me which problems are worth automating."
     ),
     "ai_systems": [
-        {"name": "Invoice Butler", "tag": "AI-driven AR collections engine", "url": IB_URL,
+        {"name": "Invoice Butler", "tag": "AI-driven AR collections engine",
          "desc": (
              "Designed and deployed a ten-stage collections system that moves overdue accounts without manual "
              "chasing: tiered automated email dunning in two customer voices, a Slack-bot gate that posts account "
@@ -121,7 +117,7 @@ ABACUM = {
              "staged commercial pressure, and a hard auto-escalation backstop. I built the tag-driven workflow "
              "architecture, the escalation and guardrail logic, the Slack integration, and every email template."
          )},
-        {"name": "Compliance Agent Ecosystem", "tag": "multi-agent system for security & vendor-risk diligence", "url": CA_URL,
+        {"name": "Compliance Agent Ecosystem", "tag": "multi-agent system for security & vendor-risk diligence",
          "desc": (
              "Architected and operate a multi-agent system automating enterprise security and vendor-risk "
              "questionnaire responses: an autofill agent drafting against a governed 320-row answer bank, an "
