@@ -2,7 +2,7 @@
 """Resume copy + per-variant typography dials.
 
 De-duplication rule: the sidebar carries capability, stack, and credentials
-only — never a metric or achievement that also appears in the main column.
+only, never a metric or achievement that also appears in the main column.
 Every accomplishment is stated exactly once, in the experience prose.
 """
 
@@ -19,7 +19,7 @@ GENERAL = {
     "summary_head": "SUMMARY",
     "summary": (
         "Finance executive who builds finance functions that scale. I run FP&A, Accounting, Revenue "
-        "Operations, and Compliance at april as its sole senior finance leader — a function I built from "
+        "Operations, and Compliance at april as its sole senior finance leader, a function I built from "
         "zero as the company's first finance hire. Ten-plus years across SaaS and fintech: GAAP accounting "
         "and audit-ready governance stood up from scratch, global consolidations delivered, $250M+ in "
         "capital supported, and manual, vendor-dependent operations replaced with automated systems that "
@@ -62,11 +62,11 @@ GENERAL = {
         {"title": "Director of Finance", "company": "april", "dates": "12/2024 – Present · New York, NY",
          "bullets": [
              (None, "First finance hire; built the entire function from zero and run it as sole senior leader across FP&A, Accounting, Revenue Operations, Compliance, and Treasury for a Series B fintech running U.S. and Israeli entities."),
-             (None, "Compressed month-end close from 31 days to 7 within four months and to 5 by year-end 2025, and delivered april's first-ever consolidated U.S.–Israel financials — migrating the company onto Campfire in 48 hours against a 2–6 month industry benchmark."),
-             (None, "Moved accounting from outsourced and consultant-dependent to fully in-house — closing the 2024 books, resolving intercompany, deferred revenue, and AP/AR cleanup, running a 2024 revenue restatement, and authoring the technical accounting library (ASC 606, 842, 810, 830, 718) — while offboarding a $144K/yr fractional CFO and $88.5K/yr outsourced FP&A, consolidating four tax and audit firms into one, and hiring the Accounting Manager and Staff Accountant who replaced them."),
-             (None, "Led april through its first-ever KPMG audit to a clean opinion and repeated it the following year; ran the SOC 1 audit independently, supported SOC 2 Type II, and stood up risk governance — Risk Committee charter, controls documentation, and the policy library behind enterprise diligence for regulated financial-institution customers."),
-             (None, "Implemented ten core platforms — Campfire, Ramp, Runway, Drivetrain, Anrok, Growfin, Guideline, QuotaPath, Thoropass, and Safebase — rebuilding ASC 606 billing and revenue recognition, AP and procurement controls, automated multi-jurisdiction sales tax, collections, commissions, and trust infrastructure."),
-             (None, "Built FP&A as an operating system: three-statement model, ARR waterfall and snowball, sales-capacity and headcount models, unit economics, and driver-based scenarios fed by HubSpot, Campfire, and GCP — the board's primary forecasting reference and the basis for april's $40M Series B and Series C readiness."),
+             (None, "Compressed month-end close from 31 days to 7 within four months and to 5 by year-end 2025, and delivered april's first-ever consolidated U.S.–Israel financials, migrating the company onto Campfire in 48 hours against a 2–6 month industry benchmark."),
+             (None, "Moved accounting from outsourced and consultant-dependent to fully in-house: closed the 2024 books, resolved intercompany, deferred revenue, and AP/AR cleanup, ran a 2024 revenue restatement, and authored the technical accounting library (ASC 606, 842, 810, 830, 718), all while offboarding a $144K/yr fractional CFO and $88.5K/yr outsourced FP&A, consolidating four tax and audit firms into one, and hiring the Accounting Manager and Staff Accountant who replaced them."),
+             (None, "Led april through its first-ever KPMG audit to a clean opinion and repeated it the following year; ran the SOC 1 audit independently, supported SOC 2 Type II, and stood up risk governance: Risk Committee charter, controls documentation, and the policy library behind enterprise diligence for regulated financial-institution customers."),
+             (None, "Implemented ten core platforms (Campfire, Ramp, Runway, Drivetrain, Anrok, Growfin, Guideline, QuotaPath, Thoropass, and Safebase), rebuilding ASC 606 billing and revenue recognition, AP and procurement controls, automated multi-jurisdiction sales tax, collections, commissions, and trust infrastructure."),
+             (None, "Built FP&A as an operating system: three-statement model, ARR waterfall and snowball, sales-capacity and headcount models, unit economics, and driver-based scenarios fed by HubSpot, Campfire, and GCP; the board's primary forecasting reference and the basis for april's $40M Series B and Series C readiness."),
              (None, "Built the people infrastructure behind a scaling finance org: compensation and equity philosophy, career ladders and leveling guides, performance review framework, workforce planning SOP, and commission plans."),
              (None, "Built a growing library of AI agents on top of the finance stack, including Invoice Butler, an AI-driven AR collections engine, and a Compliance Agent Ecosystem automating security and vendor-risk questionnaires."),
          ]},
@@ -102,7 +102,7 @@ ABACUM = {
     "summary_head": "PROFILE",
     "summary": (
         "AI-native operator who builds the systems, not just the plans. I joined april as its first finance "
-        "hire, built the function from zero, and now run it as sole senior leader — then built a library of "
+        "hire, built the function from zero, and now run it as sole senior leader, then built a library of "
         "production AI agents on top of it that run AR collections and enterprise security diligence end to "
         "end. I work where product, engineering, GTM, and finance overlap: I find the problem, scope it, "
         "ship the system, and own the outcome without waiting for a spec. A decade of finance and fintech "
@@ -123,7 +123,7 @@ ABACUM = {
              "questionnaire responses: an autofill agent drafting against a governed 320-row answer bank, an "
              "evidence-conversion agent turning SOC and penetration-test PDFs into queryable knowledge pages, a "
              "knowledge-base health monitor, and an append-only control agent that refuses to close a run with "
-             "unresolved approval gates. Runs on scheduled crons behind human review gates — a 152-item "
+             "unresolved approval gates. Runs on scheduled crons behind human review gates; a 152-item "
              "enterprise questionnaire now comes back as a reviewed draft."
          )},
     ],
@@ -160,10 +160,10 @@ ABACUM = {
         {"title": "Director of Finance", "company": "april", "dates": "12/2024 – Present · New York, NY",
          "bullets": [
              (None, "First finance hire at a Series B fintech; built the entire function from zero and run it as sole senior leader across FP&A, Accounting, Revenue Operations, Compliance, and Treasury."),
-             (None, "Compressed month-end close from 31 days to 7 in four months and to 5 by year-end 2025 — by rebuilding the process and the stack, not by hiring — and delivered the first-ever consolidated U.S.–Israel financials, migrating onto Campfire in 48 hours against a 2–6 month industry benchmark."),
+             (None, "Compressed month-end close from 31 days to 7 in four months and to 5 by year-end 2025 by rebuilding the process and the stack, not by hiring. Delivered the first-ever consolidated U.S.–Israel financials, migrating onto Campfire in 48 hours against a 2–6 month industry benchmark."),
              (None, "Implemented ten core platforms (Campfire, Ramp, Runway, Drivetrain, Anrok, Growfin, Thoropass, Safebase, QuotaPath, Guideline) and moved accounting from outsourced to in-house, hiring the team that replaced a $144K/yr fractional CFO and $88.5K/yr outsourced FP&A."),
              (None, "Ran the SOC 1 audit independently and led april through back-to-back clean KPMG audits; supported the SOC 2 Type II program and drive security, engineering, legal, and GTM to close enterprise diligence for regulated financial-institution customers."),
-             (None, "Built FP&A as an operating system — three-statement model, ARR waterfall, sales-capacity and headcount models, and driver-based scenarios fed by HubSpot, Campfire, and GCP — behind april's $40M Series B and Series C readiness."),
+             (None, "Built FP&A as an operating system (three-statement model, ARR waterfall, sales-capacity and headcount models, and driver-based scenarios fed by HubSpot, Campfire, and GCP) behind april's $40M Series B and Series C readiness."),
          ]},
         {"title": "VP of Finance & Operations", "company": "Kisi", "dates": "02/2024 – 12/2024 · New York, NY",
          "bullets": [

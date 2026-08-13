@@ -284,7 +284,7 @@ def build(variant, out_path, t):
                 hyperlink(p, sysm["url"], sysm["name"], t["role"], INK, bold=True)
             else:
                 text(p, sysm["name"], t["role"], INK, bold=True)
-            text(p, "  —  " + sysm["tag"], t["body"], MUTED, italic=True)
+            text(p, "  ·  " + sysm["tag"], t["body"], MUTED, italic=True)
             p = para(main, space_after=t["sys_gap"], line=t["body_line"],
                      align=WD_ALIGN_PARAGRAPH.JUSTIFY)
             text(p, sysm["desc"], t["body"], BODY)
