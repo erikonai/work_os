@@ -49,7 +49,7 @@ GENERAL = {
         ]},
         {"title": "Finance Stack", "items": [
             ("Close & GL", "Campfire, NetSuite, Sage Intacct, Numeric, QuickBooks"),
-            ("FP&A", "Runway, Drivetrain, Planful, Anaplan, Pigment"),
+            ("FP&A", "Runway, Drivetrain, Abacum, Adaptive, Planful, Anaplan, Pigment"),
             ("Spend & AP", "Ramp, Zip, Brex, Bill.com"),
             ("Billing & Rev Rec", "Campfire, Growfin, Chargebee, Stripe, Maxio, Tabs"),
             ("Tax", "Anrok, Neo.Tax, Sphere"),
@@ -147,7 +147,7 @@ ABACUM = {
             ("Applied", "AR collections, security questionnaire autofill, evidence pipelines, docs sync"),
         ]},
         {"title": "Finance & Data Stack", "items": [
-            ("Planning", "Drivetrain, Planful, Anaplan, Pigment, Runway"),
+            ("Planning", "Abacum, Drivetrain, Runway, Adaptive, Planful, Anaplan, Pigment"),
             ("Systems", "Campfire, NetSuite, Numeric, Ramp, Chargebee, Stripe"),
             ("Compliance & BI", "Drata, Thoropass, Anrok, Looker, Tableau"),
             ("CRM", "Salesforce, HubSpot"),
